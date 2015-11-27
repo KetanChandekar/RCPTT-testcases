@@ -1,0 +1,78 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: CheckShowAndHidePortLabelsTestCase
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _97xSgJTUEeWO_eD4CbbWfQ
+Runtime-Version: 2.0.0.201508232315
+Save-Time: 11/27/15 4:49 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+It should show and hide the port labels when show/hide port labels menu item in window menu is clicked
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button "Job (M1+M3+J)" | click
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Transform] {
+        mouse-move 104 10 button1 -height 22 -width 265
+        mouse-press 104 10 button1 -height 22 -width 265
+        mouse-release 104 10 button1 524288 -height 22 -width 265
+        mouse-hover 104 10 -height 321 -width 265
+    }
+    with [get-palette-entry Aggregate] {
+        mouse-move 60 8 button1 -height 23 -width 265
+        mouse-press 60 8 button1 -height 23 -width 265
+        get-figure 0 | drag-start 60 8
+    }
+}
+with [get-editor "Job_4" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 162 98 -detail move
+    drag-over 180 95 -detail copy
+    drag-exit
+    drag-accept 186 96 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "Job_4" | get-diagram | get-edit-part -className ContainerEditPart | drop 186 96 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail move
+    get-palette-entry Transform -index 1 | mouse-move 51 1 -height 23 -width 265
+    with [get-palette-entry Join] {
+        mouse-move 38 13 button1 -height 22 -width 265
+        mouse-press 38 13 button1 -height 22 -width 265
+        get-figure 0 | drag-start 38 13
+    }
+}
+with [get-editor "Job_4" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 94 213 -detail move
+    drag-over 213 228 -detail copy
+    drag-exit
+    drag-accept 213 228 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "Job_4" | get-diagram | get-edit-part -className ContainerEditPart | drop 213 228 -detail copy
+get-view Palette | get-palette | drag-end -detail move
+get-editor "Job_4" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1 | mouse-move 0 0 -height 90 -width 100
+get-menu "Window/Show\\/Hide Port Labels" | click
+with [get-view Palette | get-palette | get-palette-entry Aggregate] {
+    mouse-move 105 1 -height 23 -width 265
+    mouse-hover 105 1 -height 23 -width 265
+    mouse-move 105 0 -height 23 -width 265
+}
+get-menu "Window/Show\\/Hide Port Labels" | click
+get-view Palette | get-palette | get-palette-entry Aggregate | mouse-move 126 6 -height 23 -width 265
+get-editor "Job_4" | get-diagram | key-type "M1+M3+s" -times 2
+get-menu "File/Save" | click
+get-window "Save As" | close
+get-editor "Job_4" | close
+get-window "Save Resource" | get-button No | click
+get-view Palette | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
