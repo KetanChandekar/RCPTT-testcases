@@ -3,6 +3,7 @@
 	<name>com.bitwise.app.rcptt</name>
 	<comment></comment>
 	<projects>
+		<project>NewProjectAccelero</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

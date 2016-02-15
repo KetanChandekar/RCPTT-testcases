@@ -45,7 +45,8 @@
             <testExecTimeout>300</testExecTimeout>
        </testOptions>
           <suites>
-			<suite>MainTestSuite</suite>
+			<suite>Rename_Job</suite>
+			<suite>Delete_job</suite>
 		  </suites>
           
          

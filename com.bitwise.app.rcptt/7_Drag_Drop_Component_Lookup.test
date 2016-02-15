@@ -1,0 +1,82 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 7_Drag_Drop_Component_Lookup
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _kAXZUNOyEeWqCrtWb3Hddg
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 2/15/16 12:35 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button "Job (M1+M3+J)" | click
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Input] {
+        mouse-move 69 14 button1 -height 22 -width 265
+        mouse-press 69 14 button1 -height 22 -width 265
+        mouse-release 69 14 button1 524288 -height 22 -width 265
+        mouse-hover 69 14 -height 322 -width 265
+    }
+    get-palette-entry "File Delimited" | mouse-move 81 19 -height 23 -width 265
+    get-palette-entry "File Fixed Width" | mouse-move 76 21 -height 23 -width 265
+    with [get-palette-entry Transform] {
+        mouse-move 86 5 button1 -height 22 -width 265
+        mouse-press 86 5 button1 -height 22 -width 265
+        mouse-release 86 5 button1 524288 -height 22 -width 265
+    }
+    get-palette-entry Transform -index 1 | mouse-move 74 5 -height 23 -width 265
+    with [get-palette-entry Lookup] {
+        mouse-move 66 0 -height 23 -width 265
+        mouse-move 44 14 button1 -height 23 -width 265
+        mouse-press 44 14 button1 -height 23 -width 265
+        get-figure 0 | drag-start 44 14
+    }
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 10 193 -detail move
+    drag-over 52 27 -detail copy
+    drag-exit
+    drag-accept 52 27 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | drop 52 27 -detail copy
+get-view Palette | get-palette | drag-end -detail move
+get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart | mouse-move 2 34 -height 91 -width 100
+get-view Palette | get-palette | get-palette-entry "File Delimited" | mouse-move 178 22 -height 23 -width 265
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 61 40 button1 -height 91 -width 100
+    mouse-press 61 40 button1 -height 91 -width 100
+    mouse-release 61 40 button1 524288 -height 91 -width 100
+    mouse-press 61 40 button1 -height 91 -width 100
+    mouse-double-click 61 40 button1 -height 91 -width 100
+}
+with [get-window "Lookup_01 - Properties"] {
+    with [get-tab-folder] {
+        get-tab-item Schema | click
+        get-tab-item General | click
+    }
+    get-group Configuration | get-button Edit -after [get-label LookupConfiguration] | click
+    get-window "Lookup Configuration" | get-button OK | click
+    get-group Configuration | get-button Edit -after [get-label "Lookup Mapping"] | click
+    get-window "Lookup Mapping" | get-button OK | click
+    get-button OK | click
+}
+get-view Palette | get-palette | get-palette-entry "File Fixed Width" | mouse-move 264 22 -height 23 -width 265
+get-button "Save (M1+S)" | click
+with [get-window "Save As"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    with [get-editbox -after [get-label "File name:"]] {
+        click-text 1 11
+        key-type "M1+M2+ARROW_LEFT"
+        set-text "Lookup_Component.job"
+    }
+    get-button OK | click
+}
+get-editor "Lookup_Component.job" | get-diagram | mouse-hover 662 354 -height 422 -width 1078
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -1,0 +1,21 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 00_Delete_Project
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _j50scNOyEeWqCrtWb3Hddg
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 2/15/16 12:35 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "Project_RCPTT_Automation_Script" | get-menu Delete | click
+with [get-window "Delete Resources"] {
+    get-button "Delete project contents on disk (cannot be undone)" | check
+    get-button OK | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

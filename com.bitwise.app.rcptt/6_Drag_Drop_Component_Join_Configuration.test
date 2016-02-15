@@ -1,0 +1,981 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 6_Drag_Drop_Component_Join_Configuration
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _j_nycNOyEeWqCrtWb3Hddg
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 2/15/16 12:35 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button "Job (M1+M3+J)" | click
+with [get-view Palette] {
+    with [get-palette] {
+        with [get-palette-entry Input] {
+            mouse-move 56 8 button1 -height 22 -width 265
+            mouse-press 56 8 button1 -height 22 -width 265
+            mouse-release 56 8 button1 524288 -height 22 -width 265
+        }
+        with [get-palette-entry "File Delimited"] {
+            mouse-move 60 10 button1 -height 23 -width 265
+            mouse-press 60 10 button1 -height 23 -width 265
+            mouse-release 60 10 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited"] {
+            mouse-press 60 10 button1 -height 23 -width 265
+            mouse-double-click 60 10 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Delimited"] {
+            mouse-release 60 10 button1 524288 -height 23 -width 265
+            mouse-hover 60 10 -height 23 -width 265
+            mouse-press 60 10 button1 -height 23 -width 265
+            mouse-release 60 10 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited"] {
+            mouse-press 60 10 button1 -height 23 -width 265
+            mouse-double-click 60 10 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Delimited"] {
+            mouse-release 60 10 button1 524288 -height 23 -width 265
+            mouse-move 60 21 -height 23 -width 265
+        }
+        get-palette-entry "File Fixed Width" | mouse-move 57 20 -height 23 -width 265
+        with [get-palette-entry Transform] {
+            mouse-move 59 9 button1 -height 22 -width 265
+            mouse-press 59 9 button1 -height 22 -width 265
+            mouse-release 59 9 button1 524288 -height 22 -width 265
+        }
+        get-palette-entry Transform -index 1 | mouse-move 44 2 -height 23 -width 265
+        get-palette-entry Lookup | mouse-move 40 0 -height 23 -width 265
+        with [get-palette-entry Join] {
+            mouse-move 38 10 button1 -height 23 -width 265
+            mouse-press 38 10 button1 -height 23 -width 265
+            mouse-release 38 10 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry Join] {
+            mouse-press 38 10 button1 -height 23 -width 265
+            mouse-double-click 38 10 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry Join] {
+            mouse-release 38 10 button1 524288 -height 23 -width 265
+            mouse-move 90 21 -height 23 -width 265
+        }
+        get-palette-entry Lookup | mouse-move 242 5 -height 23 -width 265
+    }
+}
+with [get-editor "" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 2] {
+        mouse-move 53 43 button1 -height 91 -width 99
+        mouse-press 53 43 button1 -height 91 -width 99
+        mouse-move 55 45 -mask 524288 -height 91 -width 99
+    }
+    mouse-drag 207 78 button1 524288 -height 425 -width 1081
+    mouse-release 207 78 button1 524288 -height 425 -width 1081
+    get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 2 | mouse-move 92 78 
+        -height 91 -width 99
+}
+with [get-editor "" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart] {
+        mouse-move 0 33 -height 66 -width 100
+        mouse-move 92 36 -height 66 -width 100
+        with [get-edit-part -className PortEditPart] {
+            mouse-move 22 2 button1 -height 10 -width 27
+            mouse-press 22 2 button1 -height 10 -width 27
+            mouse-move 24 2 -mask 524288 -height 10 -width 27
+        }
+    }
+    mouse-drag 106 48 -mask 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart] {
+        with [get-edit-part -className ComponentEditPart -index 2] {
+            with [get-edit-part -className PortEditPart -index 2] {
+                mouse-drag 13 1 button1 524288 -height 10 -width 27
+                mouse-release 13 1 button1 524288 -height 10 -width 27
+            }
+            mouse-move 0 47 -height 91 -width 99
+        }
+        with [get-edit-part -className ComponentEditPart -index 1 | get-edit-part -className PortEditPart] {
+            mouse-move 23 3 button1 -height 10 -width 27
+            mouse-press 23 3 button1 -height 10 -width 27
+            mouse-move 24 3 -mask 524288 -height 10 -width 27
+        }
+    }
+    mouse-drag 111 129 -mask 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 2] {
+        with [get-edit-part -className PortEditPart] {
+            mouse-drag 17 6 button1 524288 -height 10 -width 27
+            mouse-release 17 6 button1 524288 -height 10 -width 27
+        }
+        mouse-move 82 74 -height 91 -width 99
+    }
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 50 43 button1 -height 66 -width 100
+    mouse-press 50 43 button1 -height 66 -width 100
+    mouse-release 50 43 button1 524288 -height 66 -width 100
+    mouse-press 50 43 button1 -height 66 -width 100
+    mouse-double-click 50 43 button1 -height 66 -width 100
+}
+with [get-window "IFDelimited_01 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details" | get-table] {
+        double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text "Emp_No"
+        get-cell 0 1 | mouse down -count 1
+        apply-cell-edit -deactivate
+        select "Emp_No" | activate-cell-edit -column 1
+        get-combo | select integer
+        apply-cell-edit -deactivate
+        select "Emp_No" | double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Name
+        apply-cell-edit -deactivate
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 43 24 button1 -height 66 -width 100
+    mouse-press 43 24 button1 -height 66 -width 100
+    mouse-release 43 24 button1 524288 -height 66 -width 100
+    mouse-press 43 24 button1 -height 66 -width 100
+    mouse-double-click 43 24 button1 -height 66 -width 100
+}
+with [get-window "IFDelimited_01 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details" | get-table] {
+        double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Sal
+        get-cell 2 1 | mouse down -count 1
+        apply-cell-edit -deactivate
+        select Sal | activate-cell-edit -column 1
+        get-combo | select double
+        get-cell 2 3 | mouse down -count 1
+        apply-cell-edit -deactivate
+        select Sal | activate-cell-edit -column 3
+        get-editbox | set-text 2
+        apply-cell-edit -deactivate
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 76 48 -height 66 -width 100
+    mouse-move 67 27 button1 -height 66 -width 100
+    mouse-press 67 27 button1 -height 66 -width 100
+    mouse-release 67 27 button1 524288 -height 66 -width 100
+    mouse-move 66 27 button1 -height 66 -width 100
+    mouse-press 66 27 button1 -height 66 -width 100
+    mouse-double-click 66 27 button1 -height 66 -width 100
+}
+with [get-window "IFDelimited_01 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details" | get-table] {
+        double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Dept
+        apply-cell-edit -deactivate
+        select Dept | double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Loc
+        apply-cell-edit -deactivate
+    }
+    get-tab-folder | get-tab-item General | click
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 63 33 button1 -height 66 -width 100
+    mouse-press 63 33 button1 -height 66 -width 100
+    mouse-release 63 33 button1 524288 -height 66 -width 100
+    mouse-press 63 33 button1 -height 66 -width 100
+    mouse-double-click 63 33 button1 -height 66 -width 100
+}
+set-dialog-result File "C:\\Users\\ketanc\\Desktop\\BHS\\Input\\Emp.txt"
+with [get-window "IFDelimited_01 - Properties"] {
+    with [get-group Configuration] {
+        get-button "..." | click
+        get-editbox -after [get-label Delimiter] | set-text "#"
+        get-combo -after [get-label "Has Header"] | select True
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1] {
+    mouse-move 49 39 button1 -height 66 -width 100
+    mouse-press 49 39 button1 -height 66 -width 100
+    mouse-release 49 39 button1 524288 -height 66 -width 100
+    mouse-press 49 39 button1 -height 66 -width 100
+    mouse-double-click 49 39 button1 -height 66 -width 100
+}
+with [get-window "IFDelimited_02 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details" | get-table] {
+        double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text "Emp_No"
+        get-cell 0 1 | mouse down -count 1
+        apply-cell-edit -deactivate
+        select "Emp_No" | activate-cell-edit -column 1
+        get-combo | select integer
+        apply-cell-edit -deactivate
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1] {
+    mouse-move 57 34 button1 -height 66 -width 100
+    mouse-press 57 34 button1 -height 66 -width 100
+    mouse-release 57 34 button1 524288 -height 66 -width 100
+    mouse-press 57 34 button1 -height 66 -width 100
+    mouse-double-click 57 34 button1 -height 66 -width 100
+}
+with [get-window "IFDelimited_02 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details" | get-table] {
+        double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Dept
+        apply-cell-edit -deactivate
+        select Dept | double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text "Dept_Id"
+        apply-cell-edit -deactivate
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1] {
+        mouse-move 64 41 button1 -height 66 -width 100
+        mouse-press 64 41 button1 -height 66 -width 100
+        mouse-move 65 41 -mask 524288 -height 66 -width 100
+    }
+    mouse-drag 76 127 button1 524288 -height 425 -width 1081
+    mouse-release 76 127 button1 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1] {
+        mouse-press 58 35 button1 -height 66 -width 100
+        mouse-double-click 58 35 button1 -height 66 -width 100
+    }
+}
+with [get-window "IFDelimited_02 - Properties" | get-group Configuration | get-editbox -after [get-label "File Path"]] {
+    click-text
+    set-focus
+}
+set-dialog-result File "C:\\Users\\ketanc\\Desktop\\BHS\\Input\\Dept.txt"
+with [get-window "IFDelimited_02 - Properties"] {
+    with [get-group Configuration] {
+        get-button "..." | click
+        get-editbox -after [get-label Delimiter] | set-text ";"
+        get-combo -after [get-label "Has Header"] | select True
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 1 | mouse-move 8 20 -height 66 -width 100
+    with [get-edit-part -className ComponentEditPart] {
+        mouse-move 2 59 -height 66 -width 100
+        mouse-move 43 55 -height 66 -width 100
+    }
+    get-edit-part -className ComponentEditPart -index 2 | mouse-move 67 58 -height 91 -width 99
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2] {
+    mouse-move 57 45 button1 -height 91 -width 99
+    mouse-press 57 45 button1 -height 91 -width 99
+    mouse-release 57 45 button1 524288 -height 91 -width 99
+    mouse-press 57 45 button1 -height 91 -width 99
+    mouse-double-click 57 45 button1 -height 91 -width 99
+}
+with [get-window "Join_01 - Properties"] {
+    get-group Configuration | get-button Edit -after [get-label "Join Mapping"] | click
+    with [get-window "Join Mapping"] {
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | get-column-header "Field Name" | click
+            get-item "Input index : in0" | get-table | get-cell 0 0 | mouse down -count 1
+            get-item "Input index : in0" | get-table | activate-cell-edit
+            get-item "Input index : in0" | get-table | get-item "Emp_No" | drag-start 139 11
+        }
+        with [get-table -index 1] {
+            drag-enter 0 80 -detail move
+            drag-over 90 63 -detail move
+            drag-exit
+            drag-accept 90 63 -detail move
+        }
+        get-expand-bar | get-item "Input index : in0" | get-table | drag-set-data
+        with [get-table -index 1] {
+            drop 90 63 -detail move
+            select "in0.Emp_No" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in0" | get-table | drag-end -detail move
+            get-item "Input index : in0" | get-table | get-cell 1 0 | mouse down -count 1
+        }
+        get-table -index 1 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | select Name | activate-cell-edit
+            get-item "Input index : in0" | get-table | get-item Name | drag-start 101 12
+        }
+        with [get-table -index 1] {
+            drag-enter 23 89 -detail move
+            drag-over 82 83 -detail move
+            drag-exit
+            drag-accept 82 83 -detail move
+        }
+        get-expand-bar | get-item "Input index : in0" | get-table | drag-set-data
+        with [get-table -index 1] {
+            drop 82 83 -detail move
+            select "in0.Name" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in0" | get-table | drag-end -detail move
+            get-item "Input index : in0" | get-table | get-cell 2 0 | mouse down -count 1
+        }
+        get-table -index 1 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | select Sal | activate-cell-edit
+            get-item "Input index : in0" | get-table | get-item Sal | drag-start 115 9
+        }
+        with [get-table -index 1] {
+            drag-enter 14 105 -detail move
+            drag-over 195 80 -detail move
+            drag-exit
+            drag-accept 195 80 -detail move
+        }
+        get-expand-bar | get-item "Input index : in0" | get-table | drag-set-data
+        with [get-table -index 1] {
+            drop 195 80 -detail move
+            select "in0.Sal" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in0" | get-table | drag-end -detail move
+            get-item "Input index : in0" | get-table | get-cell 3 0 | mouse down -count 1
+        }
+        get-table -index 1 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | select Dept | activate-cell-edit
+            get-item "Input index : in0" | get-table | get-item Dept | drag-start 123 10
+        }
+        with [get-table -index 1] {
+            drag-enter 21 133 -detail move
+            drag-over 142 127 -detail move
+            drag-exit
+            drag-accept 142 127 -detail move
+        }
+        get-expand-bar | get-item "Input index : in0" | get-table | drag-set-data
+        with [get-table -index 1] {
+            drop 142 127 -detail move
+            select "in0.Dept" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in0" | get-table | drag-end -detail move
+            get-item "Input index : in0" | get-table | get-cell 4 0 | mouse down -count 1
+        }
+        get-table -index 1 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | select Loc | activate-cell-edit
+            get-item "Input index : in0" | get-table | get-item Loc | drag-start 157 11
+        }
+        with [get-table -index 1] {
+            drag-enter 7 151 -detail move
+            drag-over 113 148 -detail move
+            drag-exit
+            drag-accept 113 148 -detail move
+        }
+        get-expand-bar | get-item "Input index : in0" | get-table | drag-set-data
+        with [get-table -index 1] {
+            drop 113 148 -detail move
+            select "in0.Loc" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in0" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in0" | get-table | drag-end -detail move
+        }
+        get-table -index 1 | apply-cell-edit -deactivate
+        get-button OK | click
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+/*with [get-editor "Job_24" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2] {
+    mouse-move 44 53 button1 -height 91 -width 99
+    mouse-press 44 53 button1 -height 91 -width 99
+    mouse-release 44 53 button1 524288 -height 91 -width 99
+    mouse-press 44 53 button1 -height 91 -width 99
+    mouse-double-click 44 53 button1 -height 91 -width 99
+}
+with [get-window "Join_01 - Properties"] {
+    get-group Configuration | get-button Edit -after [get-label "Join Mapping"] | click
+    with [get-window "Join Mapping"] {
+        with [get-expand-bar] {
+            get-item "Input index : in1" | expand
+            get-item "Input index : in1" | get-table | get-cell 0 0 | mouse down -count 1
+            get-item "Input index : in1" | get-table | activate-cell-edit
+            get-item "Input index : in1" | get-table | get-item "Emp_No" | drag-start 87 12
+        }
+        with [get-table -index 2] {
+            drag-enter 23 353 -detail move
+            drag-over 184 296 -detail move
+            drag-exit
+            drag-accept 184 296 -detail move
+        }
+        get-expand-bar | get-item "Input index : in1" | get-table | drag-set-data
+        with [get-table -index 2] {
+            drop 184 296 -detail move
+            select "in1.Emp_No" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in1" | get-table | drag-end -detail move
+            get-item "Input index : in1" | get-table | get-cell 1 0 | mouse down -count 1
+        }
+        get-table -index 2 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | select Dept | activate-cell-edit
+            get-item "Input index : in1" | get-table | get-item Dept | drag-start 148 8
+        }
+        with [get-table -index 2] {
+            drag-enter 17 376 -detail move
+            drag-over 142 321 -detail move
+            drag-exit
+            drag-accept 142 321 -detail move
+        }
+        get-expand-bar | get-item "Input index : in1" | get-table | drag-set-data
+        with [get-table -index 2] {
+            drop 142 321 -detail move
+            select "in1.Dept" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in1" | get-table | drag-end -detail move
+            get-item "Input index : in1" | get-table | get-cell 2 0 | mouse down -count 1
+        }
+        get-table -index 2 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | select "Dept_Id" | activate-cell-edit
+            get-item "Input index : in1" | get-table | get-item "Dept_Id" | drag-start 128 8
+        }
+        with [get-table -index 2] {
+            drag-enter 9 378 -detail move
+            drag-over 136 252 -detail move
+            drag-exit
+            drag-accept 136 252 -detail move
+        }
+        get-expand-bar | get-item "Input index : in1" | get-table | drag-set-data
+        with [get-table -index 2] {
+            drop 136 252 -detail move
+            select "in1.Dept_Id" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in1" | get-table | drag-end -detail move
+        }
+        with [get-table -index 2] {
+            get-cell 5 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select "in1.Emp_No" | activate-cell-edit -column 1
+            with [get-editbox] {
+                click-text 1 7
+                key-type Right
+                key-type Left -times 6
+                set-text "Dept_Emp_No"
+            }
+            get-cell 6 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select "in1.Dept" | activate-cell-edit -column 1
+            get-editbox | click-text 1 5
+            apply-cell-edit -deactivate
+            get-cell 7 1 | mouse down -count 1
+            activate-cell-edit -column 1
+            get-editbox | click-text 1 8
+            apply-cell-edit -deactivate
+            get-cell 6 1 | mouse down -count 1
+            activate-cell-edit -column 1
+            get-editbox | set-text Department
+            apply-cell-edit -deactivate
+        }
+        get-button OK | click
+    }
+    get-button Apply | click
+}*/
+
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2] {
+    mouse-move 62 43 button1 -height 91 -width 99
+    mouse-press 62 43 button1 -height 91 -width 99
+    mouse-release 62 43 button1 524288 -height 91 -width 99
+    mouse-press 62 43 button1 -height 91 -width 99
+    mouse-double-click 62 43 button1 -height 91 -width 99
+}
+with [get-window "Join_01 - Properties"] {
+    get-group Configuration | get-button Edit -after [get-label "Join Mapping"] | click
+    with [get-window "Join Mapping"] {
+        with [get-expand-bar] {
+            get-item "Input index : in1" | expand
+            get-item "Input index : in1" | get-table | get-cell 0 0 | mouse down -count 1
+            get-item "Input index : in1" | get-table | activate-cell-edit
+            get-item "Input index : in1" | get-table | get-item "Emp_No" | drag-start 89 9
+        }
+        with [get-table -index 2] {
+            drag-enter 5 343 -detail move
+            drag-over 126 285 -detail move
+            drag-exit
+            drag-accept 126 285 -detail move
+        }
+        get-expand-bar | get-item "Input index : in1" | get-table | drag-set-data
+        with [get-table -index 2] {
+            drop 126 285 -detail move
+            select "in1.Emp_No" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in1" | get-table | drag-end -detail move
+            get-item "Input index : in1" | get-table | get-cell 1 0 | mouse down -count 1
+        }
+        get-table -index 2 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | select Dept | activate-cell-edit
+            get-item "Input index : in1" | get-table | get-item Dept | drag-start 172 9
+        }
+        with [get-table -index 2] {
+            drag-enter 6 375 -detail move
+            drag-over 103 347 -detail move
+            drag-exit
+            drag-accept 103 347 -detail move
+        }
+        get-expand-bar | get-item "Input index : in1" | get-table | drag-set-data
+        with [get-table -index 2] {
+            drop 103 347 -detail move
+            select "in1.Dept" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in1" | get-table | drag-end -detail move
+            get-item "Input index : in1" | get-table | get-cell 2 0 | mouse down -count 1
+        }
+        get-table -index 2 | apply-cell-edit -deactivate
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | select "Dept_Id" | activate-cell-edit
+            get-item "Input index : in1" | get-table | get-item "Dept_Id" | drag-start 168 11
+        }
+        with [get-table -index 2] {
+            drag-enter 13 389 -detail move
+            drag-over 161 299 -detail move
+            drag-exit
+            drag-accept 161 299 -detail move
+        }
+        get-expand-bar | get-item "Input index : in1" | get-table | drag-set-data
+        with [get-table -index 2] {
+            drop 161 299 -detail move
+            select "in1.Dept_Id" | activate-cell-edit
+        }
+        with [get-expand-bar] {
+            get-item "Input index : in1" | get-table | apply-cell-edit -deactivate
+            get-item "Input index : in1" | get-table | drag-end -detail move
+        }
+        with [get-table -index 2] {
+            get-cell 5 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select "in1.Emp_No" | activate-cell-edit -column 1
+            with [get-editbox] {
+                click-text 1 7
+                key-type Left -times 6
+                set-text "D_Emp_No"
+            }
+            get-cell 6 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select "in1.Dept" | activate-cell-edit -column 1
+            get-editbox | click-text 1 5
+            cancel-cell-edit
+            //deactivate-cell-edit
+            //get-editbox | click-text 5
+        }
+    }
+}
+/*with [get-window "Join_01 - Properties" | get-window "Join Mapping" | get-table -index 2] {
+    select "in1.Dept"
+    get-cell 6 1 | mouse down -count 1
+}
+with [get-window "Join_01 - Properties"] {
+    with [get-window "Join Mapping"] {
+        with [get-table -index 2] {
+            activate-cell-edit -column 1
+            with [get-editbox] {
+                click-text 1 5
+                key-type Left -times 4
+                set-text "D_Dept"
+            }
+            apply-cell-edit -deactivate
+        }
+        get-button OK | click
+    }
+    get-button OK | click
+}
+*/
+with [get-window "Join_01 - Properties"] {
+    with [get-window "Join Mapping"] {
+        with [get-table -index 2] {
+            get-cell 6 1 | mouse down -count 1
+            activate-cell-edit -column 1
+            get-editbox | set-text "D_Dept"
+            apply-cell-edit -deactivate
+            get-cell 7 1 | mouse down -count 1
+            activate-cell-edit -column 1
+            get-editbox | click-text 1 8
+            apply-cell-edit -deactivate
+        }
+        get-button OK | click
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2] {
+    mouse-move 27 42 button1 -height 91 -width 99
+    mouse-press 27 42 button1 -height 91 -width 99
+    mouse-release 27 42 button1 524288 -height 91 -width 99
+    mouse-press 27 42 button1 -height 91 -width 99
+    mouse-double-click 27 42 button1 -height 91 -width 99
+}
+with [get-window "Join_01 - Properties"] {
+    get-group Configuration | get-button Edit -after [get-label "Join Mapping"] | click
+    with [get-window "Join Mapping"] {
+        get-expand-bar | get-item "Input index : in1" | expand
+        close
+    }
+    get-group Configuration | get-button Edit | click
+    get-window "Join Configuration" | get-label "" -after [get-label "Join configuration"] | click
+}
+with [get-window Properties] {
+    with [get-table] {
+        select "Emp_No"
+        get-item "Emp_No" | drag-start 67 13
+    }
+    with [get-table -index 1] {
+        drag-enter 5 38 -detail move
+        drag-over 47 35 -detail move
+        drag-exit
+        drag-accept 47 35 -detail move
+    }
+    get-table | drag-set-data
+    with [get-table -index 1] {
+        drop 47 35 -detail move
+        select "Emp_No" | activate-cell-edit
+    }
+    get-table | drag-end -detail move
+    get-table -index 1 | apply-cell-edit -deactivate
+    get-button OK | click
+}
+get-window "Join_01 - Properties" | get-window "Join Configuration" | get-label "" 
+    -after [get-label "Join configuration"] -index 1 | click
+with [get-window Properties] {
+    with [get-table] {
+        select "Emp_No"
+        get-item "Emp_No" | drag-start 77 13
+    }
+    with [get-table -index 1] {
+        drag-enter 15 41 -detail move
+        drag-over 58 41 -detail move
+        drag-exit
+        drag-accept 58 41 -detail move
+    }
+    get-table | drag-set-data
+    with [get-table -index 1] {
+        drop 58 41 -detail move
+        select "Emp_No" | activate-cell-edit
+    }
+    get-table | drag-end -detail move
+    get-table -index 1 | apply-cell-edit -deactivate
+    get-button OK | click
+}
+with [get-window "Join_01 - Properties"] {
+    get-window "Join Configuration" | get-button OK | click
+    get-button Apply | click
+    get-button OK | click
+}
+/*with [get-view Palette] {
+    with [get-palette] {
+        get-palette-entry Filter | mouse-move 264 9 -height 23 -width 265
+        get-palette-entry Aggregate | mouse-move 190 1 -height 23 -width 265
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-move 35 2 -height 23 -width 265
+            mouse-move 52 22 -height 23 -width 265
+        }
+        with [get-palette-entry Output] {
+            mouse-move 53 11 button1 -height 22 -width 265
+            mouse-press 53 11 button1 -height 22 -width 265
+            mouse-release 53 11 button1 524288 -height 22 -width 265
+        }
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-move 66 13 button1 -height 23 -width 265
+            mouse-press 66 13 button1 -height 23 -width 265
+            mouse-release 66 13 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-press 66 13 button1 -height 23 -width 265
+            mouse-double-click 66 13 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-release 66 13 button1 524288 -height 23 -width 265
+            mouse-hover 66 13 -height 23 -width 265
+            mouse-press 66 13 button1 -height 23 -width 265
+            mouse-release 66 13 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-press 66 13 button1 -height 23 -width 265
+            mouse-double-click 66 13 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-release 66 13 button1 524288 -height 23 -width 265
+            mouse-move 72 19 -height 23 -width 265
+        }
+        get-palette-entry "File Fixed Width" -index 1 | mouse-move 115 17 -height 23 -width 265
+        get-palette-entry Aggregate | mouse-move 247 8 -height 23 -width 265
+    }
+}
+with [get-editor "" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 3] {
+        mouse-move 60 41 button1 -height 66 -width 100
+        mouse-press 60 41 button1 -height 66 -width 100
+        mouse-move 60 40 -mask 524288 -height 66 -width 100
+    }
+    mouse-drag 311 192 button1 524288 -height 425 -width 1081
+    mouse-release 311 192 button1 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart] {
+        get-edit-part -className ComponentEditPart -index 3 | mouse-move 21 65 -height 66 -width 100
+        with [get-edit-part -className ComponentEditPart -index 4] {
+            mouse-move 57 34 button1 -height 66 -width 100
+            mouse-press 57 34 button1 -height 66 -width 100
+            mouse-move 58 34 -mask 524288 -height 66 -width 100
+        }
+    }
+    mouse-drag 317 268 button1 524288 -height 425 -width 1081
+    mouse-release 317 268 button1 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart] {
+        with [get-edit-part -className ComponentEditPart -index 3] {
+            mouse-move 6 54 -height 66 -width 100
+            get-edit-part -className PortEditPart | mouse-move 1 9 -height 10 -width 27
+        }
+        with [get-edit-part -className ComponentEditPart -index 2 | get-edit-part -className PortEditPart -index 1] {
+            mouse-move 3 11 button1 -height 16 -width 24
+            mouse-press 3 11 button1 -height 16 -width 24
+            mouse-move 3 12 -mask 524288 -height 16 -width 24
+        }
+        with [get-edit-part -className ComponentEditPart -index 3] {
+            mouse-drag 11 34 button1 524288 -height 66 -width 100
+            mouse-release 11 34 button1 524288 -height 66 -width 100
+            mouse-move 1 34 -height 66 -width 100
+        }
+        with [get-edit-part -className ComponentEditPart -index 2 | get-edit-part -className PortEditPart -index 3] {
+            mouse-move 1 11 button1 -height 16 -width 24
+            mouse-press 1 11 button1 -height 16 -width 24
+            mouse-move 1 12 -mask 524288 -height 16 -width 24
+        }
+        with [get-edit-part -className ComponentEditPart -index 4] {
+            mouse-drag 7 35 button1 524288 -height 66 -width 100
+            mouse-release 7 35 button1 524288 -height 66 -width 100
+            mouse-hover 7 35 -height 66 -width 100
+            mouse-move 43 35 -height 66 -width 100
+        }
+    }
+}
+*/
+
+get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1 | mouse-move 6 60 -height 66 -width 100
+with [get-view Palette] {
+    with [get-palette] {
+        get-palette-entry "File Fixed Width" | mouse-move 38 22 -height 23 -width 265
+        with [get-palette-entry Output] {
+            mouse-move 46 17 button1 -height 22 -width 265
+            mouse-press 46 17 button1 -height 22 -width 265
+            mouse-release 46 17 button1 524288 -height 22 -width 265
+        }
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-move 68 21 -height 23 -width 265
+            mouse-hover 68 21 -height 23 -width 265
+            mouse-move 68 21 button1 -height 23 -width 265
+            mouse-press 68 21 button1 -height 23 -width 265
+            mouse-release 68 21 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-press 68 21 button1 -height 23 -width 265
+            mouse-double-click 68 21 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        get-palette-entry "File Delimited" -index 1 | mouse-release 68 21 button1 524288 -height 23 -width 265
+        get-palette-entry "File Fixed Width" -index 1 | mouse-move 95 19 -height 23 -width 265
+        get-palette-entry Aggregate | mouse-move 187 19 -height 23 -width 265
+        get-palette-entry Filter | mouse-move 253 13 -height 23 -width 265
+    }
+}
+with [get-editor "" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 3] {
+        mouse-move 29 42 button1 -height 66 -width 100
+        mouse-press 29 42 button1 -height 66 -width 100
+        mouse-move 30 42 -mask 524288 -height 66 -width 100
+    }
+    mouse-drag 274 216 button1 524288 -height 425 -width 1081
+    mouse-release 274 216 button1 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart] {
+        get-edit-part -className ComponentEditPart -index 3 | mouse-move 19 22 -height 66 -width 100
+        with [get-edit-part -className ComponentEditPart -index 2 | get-edit-part -className PortEditPart -index 1] {
+            mouse-move 4 11 button1 -height 16 -width 24
+            mouse-press 4 11 button1 -height 16 -width 24
+            mouse-move 4 14 -mask 524288 -height 16 -width 24
+        }
+    }
+    mouse-drag 227 133 -mask 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 3] {
+        with [get-edit-part -className PortEditPart] {
+            mouse-drag 21 3 button1 524288 -height 10 -width 27
+            mouse-release 21 3 button1 524288 -height 10 -width 27
+        }
+        mouse-move 82 57 -height 66 -width 100
+    }
+}
+with [get-view Palette] {
+    with [get-palette] {
+        get-palette-entry "File Fixed Width" -index 1 | mouse-move 151 0 -height 23 -width 265
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-move 89 13 button1 -height 23 -width 265
+            mouse-press 89 13 button1 -height 23 -width 265
+            mouse-release 89 13 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-press 89 13 button1 -height 23 -width 265
+            mouse-double-click 89 13 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-release 89 13 button1 524288 -height 23 -width 265
+            mouse-move 96 22 -height 23 -width 265
+        }
+        get-palette-entry "File Fixed Width" -index 1 | mouse-move 256 7 -height 23 -width 265
+    }
+}
+with [get-editor "" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 2 
+        | get-edit-part -className PortEditPart -index 3] {
+        mouse-move 2 13 button1 -height 16 -width 24
+        mouse-press 2 13 button1 -height 16 -width 24
+        mouse-move 3 14 -mask 524288 -height 16 -width 24
+    }
+    mouse-drag 193 133 -mask 524288 -height 425 -width 1081
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 4] {
+        mouse-drag 18 30 button1 524288 -height 66 -width 100
+        mouse-release 18 30 button1 524288 -height 66 -width 100
+        mouse-hover 18 30 -height 66 -width 100
+        mouse-move 86 27 -height 66 -width 100
+    }
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3] {
+    mouse-move 37 38 button1 -height 66 -width 100
+    mouse-press 37 38 button1 -height 66 -width 100
+    mouse-release 37 38 button1 524288 -height 66 -width 100
+    mouse-press 37 38 button1 -height 66 -width 100
+    mouse-double-click 37 38 button1 -height 66 -width 100
+}
+with [get-window "OFDelimited_01 - Properties"] {
+    with [get-group Configuration] {
+        get-editbox -after [get-label "File Path"] | set-text Unused1
+        get-combo -after [get-label "Has Header"] | select True
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 4] {
+    mouse-move 53 49 button1 -height 66 -width 100
+    mouse-press 53 49 button1 -height 66 -width 100
+    mouse-release 53 49 button1 524288 -height 66 -width 100
+    mouse-press 53 49 button1 -height 66 -width 100
+    mouse-double-click 53 49 button1 -height 66 -width 100
+}
+with [get-window "OFDelimited_02 - Properties"] {
+    with [get-group Configuration] {
+        get-editbox -after [get-label "File Path"] | set-text Unused2
+        get-combo -after [get-label "Has Header"] | select True
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-view Palette | get-palette] {
+    get-palette-entry "File Fixed Width" -index 1 | mouse-move 219 17 -height 23 -width 265
+    get-palette-entry "File Fixed Width" | mouse-move 170 6 -height 23 -width 265
+    get-palette-entry "File Delimited" | mouse-move 250 1 -height 23 -width 265
+}
+get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 48 51 -height 91 -width 99
+get-button "Save (M1+S)" | click
+with [get-window "Save As"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    with [get-editbox -after [get-label "File name:"]] {
+        click-text 1 11
+        key-type "M1+M2+ARROW_LEFT" -times 2
+        set-text "Join_Configu.job"
+        set-text "Join_Configur.job"
+        set-text "Join_Configura.job"
+        set-text "Join_Configurat.job"
+        set-text "Join_Configurati.job"
+        set-text "Join_Configuratio.job"
+        set-text "Join_Configuration.job"
+        set-text "Join_Configuration+.job"
+        set-text "Join_Configuration+I.job"
+        set-text "Join_Configuration+In.job"
+        set-text "Join_Configuration+Inp.job"
+        set-text "Join_Configuration+Inpu.job"
+        set-text "Join_Configuration+Input.job"
+        set-text "Join_Configuration+Input_.job"
+        set-text "Join_Configuration+Input_C.job"
+        set-text "Join_Configuration+Input_Co.job"
+        set-text "Join_Configuration+Input_Com.job"
+        set-text "Join_Configuration+Input_Comp.job"
+        set-text "Join_Configuration+Input_Compo.job"
+        set-text "Join_Configuration+Input_Compon.job"
+        set-text "Join_Configuration+Input_Compone.job"
+        set-text "Join_Configuration+Input_Componen.job"
+        set-text "Join_Configuration+Input_Component.job"
+        set-text "Join_Configuration+Input_Components.job"
+    }
+    get-button OK | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

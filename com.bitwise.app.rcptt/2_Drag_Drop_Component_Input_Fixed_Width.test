@@ -1,0 +1,92 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 2_Drag_Drop_Component_Input_Fixed_Width
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _j8WcANOyEeWqCrtWb3Hddg
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 2/15/16 12:35 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button "Job (M1+M3+J)" | click
+with [get-view Palette] {
+    with [get-palette] {
+        with [get-palette-entry Output] {
+            mouse-move 49 10 button1 -height 22 -width 265
+            mouse-press 49 10 button1 -height 22 -width 265
+            mouse-release 49 10 button1 524288 -height 22 -width 265
+        }
+        with [get-palette-entry Input] {
+            mouse-move 54 17 button1 -height 22 -width 265
+            mouse-press 54 17 button1 -height 22 -width 265
+            mouse-release 54 17 button1 524288 -height 22 -width 265
+            mouse-hover 54 17 -height 72 -width 265
+        }
+        get-palette-entry "File Delimited" | mouse-move 69 21 -height 23 -width 265
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-move 72 6 button1 -height 23 -width 265
+            mouse-press 72 6 button1 -height 23 -width 265
+            mouse-release 72 6 button1 524288 -height 23 -width 265
+            mouse-move 73 6 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-move 73 6 button1 -height 23 -width 265
+            mouse-press 73 6 button1 -height 23 -width 265
+            mouse-double-click 73 6 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-release 73 6 button1 524288 -height 23 -width 265
+            mouse-move 177 2 -height 23 -width 265
+        }
+        get-palette-entry "File Delimited" | mouse-move 249 16 -height 23 -width 265
+    }
+}
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 56 28 button1 -height 66 -width 100
+    mouse-press 56 28 button1 -height 66 -width 100
+    mouse-release 56 28 button1 524288 -height 66 -width 100
+    mouse-press 53 25 button1 -height 66 -width 100
+    mouse-double-click 53 25 button1 -height 66 -width 100
+}
+set-dialog-result File "C:\\Users\\ketanc\\Desktop\\BHS\\Input\\Fixed_WD.txt"
+with [get-window "IFixedWidth_01 - Properties"] {
+    get-group Configuration | get-button "..." | click
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details" | get-table] {
+        double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text "Emp_No"
+        get-cell 0 1 | mouse down -count 1
+        apply-cell-edit -deactivate
+        select "Emp_No" | activate-cell-edit -column 1
+        get-combo | select integer
+        apply-cell-edit -deactivate
+        select "Emp_No" | double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Name
+        apply-cell-edit -deactivate
+        select Name | double-click
+        select DefaultField0 | activate-cell-edit
+        get-editbox | set-text Loc
+        apply-cell-edit -deactivate
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+get-view Palette | get-palette | get-palette-entry "File Delimited" | mouse-move 248 4 -height 23 -width 265
+get-button "Save (M1+S)" | click
+with [get-window "Save As"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    get-editbox -after [get-label "File name:"] | set-text "Fixed_Width_Output_File.job"
+    get-button OK | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
