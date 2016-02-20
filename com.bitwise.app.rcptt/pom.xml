@@ -35,7 +35,7 @@
         <extensions>true</extensions>
         <configuration>
            <aut>
-      <explicit>/var/lib/jenkins/jobs/project_build/workspace/com.bitwise.app.product/target/products/com.bitwise.app.perspective.ID-linux.gtk.x86_64.zip</explicit>   
+           		<explicit>/var/lib/jenkins/jobs/bhs_ui_integrator/workspace/com.bitwise.app.product/target/products/com.bitwise.app.perspective.ID-linux.gtk.x86_64.zip</explicit>   
             </aut>
     <runner>
             <version>${rcptt-maven-version}</version>
