@@ -1,12 +1,12 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Element-Name: 3_Drag_Drop_Component_Ouput_Delim_File
+Element-Name: 03_Drag_Drop_Component_Ouput_Delim_File
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _j8gNANOyEeWqCrtWb3Hddg
 Runtime-Version: 2.0.1.201508250612
-Save-Time: 2/15/16 12:35 PM
+Save-Time: 2/20/16 12:51 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -92,4 +92,10 @@ with [get-window "Save As"] {
 get-editor "Output_Component.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
     -className ComponentEditPart | mouse-move 12 55 -height 66 -width 100
 get-view Palette | get-palette | get-palette-entry "File Fixed Width" -index 1 | mouse-move 149 2 -height 23 -width 265
+with [get-editor "Output_Component.job"] {
+    get-diagram | get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart 
+        | mouse-move 40 38 -height 66 -width 100
+    close
+}
+get-view Palette | click
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

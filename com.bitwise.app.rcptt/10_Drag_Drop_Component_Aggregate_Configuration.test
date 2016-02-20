@@ -6,7 +6,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _j7A_QNOyEeWqCrtWb3Hddg
 Runtime-Version: 2.0.1.201508250612
-Save-Time: 2/15/16 12:35 PM
+Save-Time: 2/18/16 6:58 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -334,27 +334,7 @@ get-button "Save (M1+S)" | click
 with [get-window "Save As"] {
     get-tree | select "Project_RCPTT_Automation_Script/jobs"
     with [get-editbox -after [get-label "File name:"]] {
-        set-text "Aggregate_Co.job"
-        set-text "Aggregate_Com.job"
-        set-text "Aggregate_Comp.job"
-        set-text "Aggregate_Compo.job"
-        set-text "Aggregate_Compon.job"
-        set-text "Aggregate_Compone.job"
-        set-text "Aggregate_Componen.job"
-        set-text "Aggregate_Component.job"
-        set-text "Aggregate_Component_.job"
-        set-text "Aggregate_Component_C.job"
-        set-text "Aggregate_Component_Co.job"
-        set-text "Aggregate_Component_Con.job"
-        set-text "Aggregate_Component_Cong.job"
-        set-text "Aggregate_Component_Congi.job"
-        set-text "Aggregate_Component_Congiu.job"
-        set-text "Aggregate_Component_Congiur.job"
-        set-text "Aggregate_Component_Congiura.job"
-        set-text "Aggregate_Component_Congiurat.job"
-        set-text "Aggregate_Component_Congiurati.job"
-        set-text "Aggregate_Component_Congiuratio.job"
-        set-text "Aggregate_Component_Congiuration.job"
+       set-text "Aggregate_Component_Congiuration.job"
     }
     get-button OK | click
 }

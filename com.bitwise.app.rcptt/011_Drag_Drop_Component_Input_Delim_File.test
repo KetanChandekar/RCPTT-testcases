@@ -1,12 +1,12 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Element-Name: 1_Drag_Drop_Component_Input_Delim_File
+Element-Name: 011_Drag_Drop_Component_Input_Delim_File
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _j7wmINOyEeWqCrtWb3Hddg
 Runtime-Version: 2.0.1.201508250612
-Save-Time: 2/15/16 12:35 PM
+Save-Time: 2/20/16 1:07 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -132,4 +132,6 @@ with [get-window "Save As"] {
     }
     get-button OK | click
 }
+get-editor "Emp_Input_Delim_File.job" | close
+get-view Palette | click
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
