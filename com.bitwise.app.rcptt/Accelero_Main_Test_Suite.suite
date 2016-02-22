@@ -5,7 +5,7 @@ Element-Type: testsuite
 Element-Version: 2.0
 Id: _9ReSENegEeWYn8Ki02S0yQ
 Runtime-Version: 2.0.1.201508250612
-Save-Time: 2/20/16 2:18 PM
+Save-Time: 2/22/16 7:56 PM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -16,6 +16,7 @@ _j7wmINOyEeWqCrtWb3Hddg	// kind: 'test' name: '011_Drag_Drop_Component_Input_Del
 _j8WcANOyEeWqCrtWb3Hddg	// kind: 'test' name: '021_Drag_Drop_Component_Input_Fixed_Width' path: '021_Drag_Drop_Component_Input_Fixed_Width.test'
 _j8gNANOyEeWqCrtWb3Hddg	// kind: 'test' name: '03_Drag_Drop_Component_Ouput_Delim_File' path: '03_Drag_Drop_Component_Ouput_Delim_File.test'
 _j8zH8NOyEeWqCrtWb3Hddg	// kind: 'test' name: '04_Drag_Drop_Component_Output_Fixed_Width' path: '04_Drag_Drop_Component_Output_Fixed_Width.test'
+_j7A_QNOyEeWqCrtWb3Hddg	// kind: 'test' name: '10_Drag_Drop_Component_Aggregate_Configuration' path: '10_Drag_Drop_Component_Aggregate_Configuration.test'
 _kB2nENOyEeWqCrtWb3Hddg	// kind: 'test' name: '09_Drag_Drop_Component_Transform_Configuration' path: '09_Drag_Drop_Component_Transform_Configuration.test'
 _j7T6MNOyEeWqCrtWb3Hddg	// kind: 'test' name: '11_Copy_Paste' path: '11_Copy_Paste.test'
 _j50scNOyEeWqCrtWb3Hddg	// kind: 'test' name: '99_Delete_Project' path: '99_Delete_Project.test'
