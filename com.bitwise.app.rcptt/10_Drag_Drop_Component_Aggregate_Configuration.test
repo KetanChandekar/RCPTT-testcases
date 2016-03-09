@@ -4,343 +4,308 @@ Element-Name: 10_Drag_Drop_Component_Aggregate_Configuration
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
-Id: _j7A_QNOyEeWqCrtWb3Hddg
+Id: _rTZkYOXBEeWvrYKV8V0j7g
 Runtime-Version: 2.0.1.201508250612
-Save-Time: 2/22/16 7:55 PM
+Save-Time: 3/9/16 2:37 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
 
-get-button "Job (M1+M3+J)" | click
+get-button "Job (M1+J)" | click
 with [get-view Palette] {
     with [get-palette] {
         with [get-palette-entry Input] {
-            mouse-move 72 10 button1 -height 22 -width 265
-            mouse-press 72 10 button1 -height 22 -width 265
-            mouse-release 72 10 button1 524288 -height 22 -width 265
-            mouse-hover 72 10 -height 322 -width 265
+            mouse-move 66 17 button1 -height 22 -width 265
+            mouse-press 66 17 button1 -height 22 -width 265
+            mouse-release 66 17 button1 524288 -height 22 -width 265
         }
+        get-palette-entry "Generate Records" | mouse-move 74 22 -height 23 -width 265
         with [get-palette-entry "File Delimited"] {
-            mouse-move 83 4 button1 -height 23 -width 265
-            mouse-press 83 4 button1 -height 23 -width 265
-            mouse-release 83 4 button1 524288 -height 23 -width 265
+            mouse-move 70 16 -height 23 -width 265
+            mouse-hover 70 16 -height 23 -width 265
+            mouse-move 70 16 button1 -height 23 -width 265
+            mouse-press 70 16 button1 -height 23 -width 265
+            mouse-release 70 16 button1 524288 -height 23 -width 265
         }
         double-click
         with [get-palette-entry "File Delimited"] {
-            mouse-press 83 4 button1 -height 23 -width 265
-            mouse-double-click 83 4 button1 -height 23 -width 265
+            mouse-press 70 16 button1 -height 23 -width 265
+            mouse-double-click 70 16 button1 -height 23 -width 265
         }
     }
     with [get-palette] {
         with [get-palette-entry "File Delimited"] {
-            mouse-release 83 4 button1 524288 -height 23 -width 265
-            mouse-move 83 17 -height 23 -width 265
+            mouse-release 70 16 button1 524288 -height 23 -width 265
+            mouse-move 67 17 -height 23 -width 265
         }
-        get-palette-entry "File Fixed Width" | mouse-move 94 19 -height 23 -width 265
+        get-palette-entry "File Fixed Width" | mouse-move 65 1 -height 23 -width 265
+        with [get-palette-entry Output] {
+            mouse-move 71 16 button1 -height 22 -width 265
+            mouse-press 71 16 button1 -height 22 -width 265
+            mouse-release 71 16 button1 524288 -height 22 -width 265
+        }
         with [get-palette-entry Transform] {
-            mouse-move 60 10 button1 -height 22 -width 265
-            mouse-press 60 10 button1 -height 22 -width 265
-            mouse-release 60 10 button1 524288 -height 22 -width 265
+            mouse-move 67 16 button1 -height 22 -width 265
+            mouse-press 67 16 button1 -height 22 -width 265
+            mouse-release 67 16 button1 524288 -height 22 -width 265
         }
-        get-palette-entry Transform -index 1 | mouse-move 70 21 -height 23 -width 265
-        get-palette-entry Lookup | mouse-move 71 3 -height 23 -width 265
-        get-palette-entry Join | mouse-move 66 0 -height 23 -width 265
-        get-palette-entry Filter | mouse-move 62 0 -height 23 -width 265
+        get-palette-entry "Unique Sequence" | mouse-move 71 0 -height 23 -width 265
+        get-palette-entry Transform -index 1 | mouse-move 71 1 -height 23 -width 265
+        get-palette-entry Lookup | mouse-move 71 6 -height 23 -width 265
+        get-palette-entry Join | mouse-move 65 0 -height 23 -width 265
+        get-palette-entry Filter | mouse-move 60 4 -height 23 -width 265
         with [get-palette-entry Aggregate] {
-            mouse-move 58 12 -height 23 -width 265
-            mouse-hover 58 12 -height 23 -width 265
-            mouse-move 58 12 button1 -height 23 -width 265
-            mouse-press 58 12 button1 -height 23 -width 265
-            get-figure 0 | drag-start 58 12
+            mouse-move 49 12 button1 -height 23 -width 265
+            mouse-press 49 12 button1 -height 23 -width 265
+            mouse-release 49 12 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry Aggregate] {
+            mouse-press 49 12 button1 -height 23 -width 265
+            mouse-double-click 49 12 button1 -height 23 -width 265
         }
     }
+    with [get-palette | get-palette-entry Aggregate] {
+        mouse-release 49 12 button1 524288 -height 23 -width 265
+        mouse-move 252 5 -height 23 -width 265
+    }
 }
-with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart] {
-    drag-enter 10 171 -detail move
-    drag-over 190 16 -detail copy
-    drag-exit
-    drag-accept 190 16 -detail copy
-}
-get-view Palette | get-palette | drag-set-data
-get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | drop 190 16 -detail copy
-get-view Palette | get-palette | drag-end -detail move
 with [get-editor "" | get-diagram] {
-    mouse-move 167 185 button1 -height 425 -width 1081
-    mouse-press 167 185 button1 -height 425 -width 1081
-    mouse-release 167 185 button1 524288 -height 425 -width 1081
-    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart | get-edit-part 
-        -className PortEditPart] {
-        mouse-move 23 2 button1 -height 10 -width 27
-        mouse-press 23 2 button1 -height 10 -width 27
-        mouse-move 24 1 -mask 524288 -height 10 -width 27
-    }
-    mouse-drag 106 47 -mask 524288 -height 425 -width 1081
     with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1] {
-        mouse-drag 27 40 button1 524288 -height 66 -width 100
-        mouse-release 27 40 button1 524288 -height 66 -width 100
-        mouse-move 27 42 -height 66 -width 100
+        mouse-move 56 38 button1 -height 75 -width 100
+        mouse-press 56 38 button1 -height 75 -width 100
+        mouse-move 56 41 -mask 524288 -height 75 -width 100
     }
-    mouse-move 231 144 button1 -height 425 -width 1081
-    mouse-press 231 144 button1 -height 425 -width 1081
-    mouse-release 231 144 button1 524288 -height 425 -width 1081
-    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart] {
-        mouse-move 56 33 button1 -height 66 -width 100
-        mouse-press 56 33 button1 -height 66 -width 100
-        mouse-release 56 33 button1 524288 -height 66 -width 100
-        mouse-press 53 30 button1 -height 66 -width 100
-        mouse-double-click 53 30 button1 -height 66 -width 100
+    mouse-drag 240 48 button1 524288 -height 465 -width 1081
+    mouse-release 240 48 button1 524288 -height 465 -width 1081
+    with [get-edit-part -className ContainerEditPart] {
+        get-edit-part -className ComponentEditPart -index 1 | mouse-move 34 72 -height 75 -width 100
+        with [get-edit-part -className ComponentEditPart | get-edit-part -className PortEditPart] {
+            mouse-move 22 3 button1 -height 10 -width 27
+            mouse-press 22 3 button1 -height 10 -width 27
+            mouse-move 23 3 -mask 524288 -height 10 -width 27
+        }
     }
+    mouse-drag 105 53 -mask 524288 -height 465 -width 1081
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1] {
+        with [get-edit-part -className PortEditPart] {
+            mouse-drag 23 5 button1 524288 -height 10 -width 27
+            mouse-release 23 5 button1 524288 -height 10 -width 27
+        }
+        mouse-move 6 69 -height 75 -width 100
+    }
+    mouse-hover 151 133 -height 465 -width 1081
 }
-with [get-window "IFDelimited_01 - Properties"] {
-    get-tab-folder | get-tab-item Schema | click
-    with [get-group "Record Structure Details" | get-table] {
-        double-click
-        select DefaultField0 | activate-cell-edit
-        get-editbox | set-text "Emp_No"
-        get-cell 0 1 | mouse down -count 1
-        apply-cell-edit -deactivate
-        select "Emp_No" | activate-cell-edit -column 1
-        get-combo | select integer
-        apply-cell-edit -deactivate
-        select "Emp_No" | double-click
-        select DefaultField0 | activate-cell-edit
-        get-editbox | set-text Name
-        apply-cell-edit -deactivate
-    }
-    get-button Apply | click
-    get-button OK | click
+with [get-view Palette | get-palette] {
+    get-palette-entry "File Fixed Width" | mouse-move 233 0 -height 23 -width 265
+    get-palette-entry "File Delimited" | mouse-move 229 1 -height 23 -width 265
 }
 with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
     -className ComponentEditPart] {
-    with [get-edit-part -className PortEditPart] {
-        mouse-move 1 1 button1 -height 10 -width 27
-        mouse-press 1 1 button1 -height 10 -width 27
-        mouse-release 1 1 button1 524288 -height 10 -width 27
-        mouse-press 1 1 button1 -height 10 -width 27
-        mouse-double-click 1 1 button1 -height 10 -width 27
-        mouse-release 1 1 button1 524288 -height 10 -width 27
-    }
-    mouse-move 52 36 button1 -height 66 -width 100
-    mouse-press 52 36 button1 -height 66 -width 100
-    mouse-release 52 36 button1 524288 -height 66 -width 100
-    mouse-press 52 36 button1 -height 66 -width 100
-    mouse-double-click 52 36 button1 -height 66 -width 100
+    mouse-move 55 47 button1 -height 75 -width 100
+    mouse-press 55 47 button1 -height 75 -width 100
+    mouse-release 55 47 button1 524288 -height 75 -width 100
+    mouse-move 51 44 button1 -height 75 -width 100
+    mouse-press 51 44 button1 -height 75 -width 100
+    mouse-double-click 51 44 button1 -height 75 -width 100
 }
 with [get-window "IFDelimited_01 - Properties"] {
     get-tab-folder | get-tab-item Schema | click
-    with [get-group "Record Structure Details" | get-table] {
-        double-click
-        select DefaultField0 | activate-cell-edit
-        get-editbox | set-text Sal
-        get-cell 2 1 | mouse down -count 1
-        apply-cell-edit -deactivate
-        select Sal | activate-cell-edit -column 1
-        get-combo | select double
-        get-cell 2 3 | mouse down -count 1
-        apply-cell-edit -deactivate
-        select Sal | activate-cell-edit -column 3
-        get-editbox | set-text 2
-        apply-cell-edit -deactivate
-    }
-    get-button Apply | click
-    get-button OK | click
-}
-with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
-    -className ComponentEditPart] {
-    mouse-move 60 55 button1 -height 66 -width 100
-    mouse-press 60 55 button1 -height 66 -width 100
-    mouse-release 60 55 button1 524288 -height 66 -width 100
-    mouse-press 60 55 button1 -height 66 -width 100
-    mouse-double-click 60 55 button1 -height 66 -width 100
-}
-with [get-window "IFDelimited_01 - Properties"] {
-    get-tab-folder | get-tab-item Schema | click
-    with [get-group "Record Structure Details" | get-table] {
-        double-click
-        select DefaultField0 | activate-cell-edit
-        get-editbox | set-text Dept
-        apply-cell-edit -deactivate
-        select Dept | double-click
-        select DefaultField0 | activate-cell-edit
-        get-editbox | set-text Loc
-        apply-cell-edit -deactivate
+    with [get-group "Record Structure Details"] {
+        get-label "" -after [get-label "Schema Types"] -index 5 | click
+        get-table | select DefaultField0 | activate-cell-edit
+        get-label "" -after [get-label "Schema Types"] -index 5 | click
+        with [get-table] {
+            apply-cell-edit -deactivate
+            select DefaultField1 | activate-cell-edit
+        }
+        get-label "" -after [get-label "Schema Types"] -index 5 | click
+        with [get-table] {
+            apply-cell-edit -deactivate
+            select DefaultField2 | activate-cell-edit
+            get-cell 0 0 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select DefaultField0 | activate-cell-edit
+            with [get-editbox] {
+                set-text "Emp_No"
+                key-type "TRAVERSE_TAB_NEXT"
+            }
+            apply-cell-edit -deactivate
+            select "Emp_No" | activate-cell-edit -column 1
+            apply-cell-edit -deactivate
+            select "Emp_No" | activate-cell-edit -column 6
+            get-editbox | key-type "TRAVERSE_TAB_NEXT"
+            apply-cell-edit -deactivate
+            get-editbox | set-text DefaultField1
+            select DefaultField1 | activate-cell-edit
+            with [get-editbox] {
+                set-text Name
+                key-type "TRAVERSE_TAB_NEXT"
+            }
+            apply-cell-edit -deactivate
+            select Name | activate-cell-edit -column 1
+            apply-cell-edit -deactivate
+            select Name | activate-cell-edit -column 6
+            get-editbox | key-type "TRAVERSE_TAB_NEXT"
+            apply-cell-edit -deactivate
+            get-editbox | set-text DefaultField2
+            select DefaultField2 | activate-cell-edit
+            get-editbox | key-type "TRAVERSE_TAB_NEXT"
+            apply-cell-edit -deactivate
+            select DefaultField2 | activate-cell-edit -column 1
+            apply-cell-edit -deactivate
+            select DefaultField2 | activate-cell-edit
+            get-editbox | set-text Loc
+            apply-cell-edit -deactivate
+        }
     }
     get-tab-folder | get-tab-item General | click
-}
-set-dialog-result File "C:\\Users\\ketanc\\Desktop\\BHS\\Input\\Emp.txt"
-with [get-window "IFDelimited_01 - Properties"] {
-    with [get-group Configuration] {
-        get-button "..." | click
-        get-editbox -after [get-label Delimiter] | set-text "#"
-        get-combo -after [get-label "Safe Property"] | select False
-        get-combo -after [get-label "Has Header"] | select True
-        get-combo -after [get-label Strict] | select False
-    }
+    get-group Configuration | get-combo -after [get-label "Has Header"] | select True
     get-button Apply | click
-    with [get-tab-folder] {
-        get-tab-item Schema | click
-        get-tab-item General | click
-    }
     get-button OK | click
 }
-with [get-editor "" | get-diagram] {
-    mouse-move 141 161 button1 -height 425 -width 1081
-    mouse-press 141 161 button1 -height 425 -width 1081
-    mouse-move 141 160 -mask 524288 -height 425 -width 1081
-    with [get-edit-part -className ContainerEditPart] {
-        mouse-drag 138 156 button1 524288 -height 425 -width 1081
-        mouse-release 138 156 button1 524288 -height 425 -width 1081
-    }
-    mouse-hover 145 152 -height 425 -width 1081
-    get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1 | mouse-move 55 45 
-        -height 66 -width 100
+with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 83 40 button1 -height 75 -width 100
+    mouse-press 83 40 button1 -height 75 -width 100
+    mouse-release 83 40 button1 524288 -height 75 -width 100
+    mouse-press 83 40 button1 -height 75 -width 100
+    mouse-double-click 83 40 button1 -height 75 -width 100
+}
+with [get-window "IFDelimited_01 - Properties"] {
+    get-group Configuration | get-editbox -after [get-label "File Path"] | set-text test
+    get-button OK | click
 }
 with [get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
     -className ComponentEditPart -index 1] {
-    mouse-move 48 42 button1 -height 66 -width 100
-    mouse-press 48 42 button1 -height 66 -width 100
-    mouse-release 48 42 button1 524288 -height 66 -width 100
-    mouse-press 48 42 button1 -height 66 -width 100
-    mouse-double-click 48 42 button1 -height 66 -width 100
+    mouse-move 69 48 button1 -height 75 -width 100
+    mouse-press 69 48 button1 -height 75 -width 100
+    mouse-release 69 48 button1 524288 -height 75 -width 100
+    mouse-press 69 48 button1 -height 75 -width 100
+    mouse-double-click 69 48 button1 -height 75 -width 100
 }
 with [get-window "Aggregate_01 - Properties"] {
     get-group Configuration | get-button Edit -after [get-label Aggregate] | click
-    with [get-window -class MappingDialog] {
+    with [get-window Aggregate] {
         with [get-table] {
             select "Emp_No"
-            get-item "Emp_No" | drag-start 84 13
+            get-item "Emp_No" | drag-start 72 7
         }
         with [get-table -index 1] {
-            drag-enter 26 47 -detail move
-            drag-over 176 50 -detail copy
+            drag-enter 18 43 -detail move
+            drag-over 105 47 -detail copy
             drag-exit
-            drag-accept 176 50 -detail copy
+            drag-accept 105 47 -detail copy
         }
         get-table | drag-set-data
-        get-table -index 1 | drop 176 50 -detail copy
+        get-table -index 1 | drop 105 47 -detail copy
         with [get-table] {
             drag-end -detail copy
             select Name
-            get-item Name | drag-start 122 9
+            get-item Name | drag-start 110 12
         }
         with [get-table -index 1] {
-            drag-enter 10 51 -detail move
-            drag-over 159 65 -detail copy
+            drag-enter 3 60 -detail move
+            drag-over 113 85 -detail copy
             drag-exit
-            drag-accept 159 65 -detail copy
+            drag-accept 113 85 -detail copy
         }
         get-table | drag-set-data
-        get-table -index 1 | drop 159 65 -detail copy
-        with [get-table] {
-            drag-end -detail copy
-            select Sal
-            get-item Sal | drag-start 91 4
-        }
-        with [get-table -index 1] {
-            get-item "" -index 1 | drag-enter 5 17 -detail move
-            drag-over 198 87 -detail copy
-            get-item "" -index 1 | drag-exit
-            drag-accept 198 87 -detail copy
-        }
-        get-table | drag-set-data
-        get-table -index 1 | drop 198 87 -detail copy
-        with [get-table] {
-            drag-end -detail copy
-            select Dept
-            get-item Dept | drag-start 140 15
-        }
-        with [get-table -index 1] {
-            drag-enter 4 81 -detail move
-            drag-over 161 97 -detail copy
-            drag-exit
-            drag-accept 161 97 -detail copy
-        }
-        get-table | drag-set-data
-        get-table -index 1 | drop 161 97 -detail copy
+        get-table -index 1 | drop 113 85 -detail copy
         with [get-table] {
             drag-end -detail copy
             select Loc
-            get-item Loc | drag-start 119 14
+            get-item Loc | drag-start 137 4
         }
         with [get-table -index 1] {
-            drag-enter 10 114 -detail move
-            drag-over 129 129 -detail copy
+            drag-enter 23 66 -detail move
+            drag-over 136 81 -detail copy
             drag-exit
-            drag-accept 129 129 -detail copy
+            drag-accept 136 81 -detail copy
         }
         get-table | drag-set-data
-        get-table -index 1 | drop 129 129 -detail copy
+        get-table -index 1 | drop 136 81 -detail copy
         get-table | drag-end -detail copy
         get-button OK | click
     }
     get-group Configuration | get-button Edit -after [get-label KeyFields] | click
-    with [get-window "Key Field"] {
-        with [get-table] {
-            select "Emp_No"
-            get-item "Emp_No" | drag-start 115 9
-        }
-        with [get-table -after [get-label "Key Field Properties"]] {
-            drag-enter 22 55 -detail move
-            drag-over 123 53 -detail move
-            drag-exit
-            drag-accept 123 53 -detail move
-        }
-        get-table | drag-set-data
-        with [get-table -after [get-label "Key Field Properties"]] {
-            drop 123 53 -detail move
-            select "Emp_No" | activate-cell-edit
-        }
-        get-table | drag-end -detail move
-        get-table -after [get-label "Key Field Properties"] | apply-cell-edit -deactivate
-        get-button OK | click
+}
+with [get-window "Key Fields"] {
+    with [get-table] {
+        select "Emp_No"
+        get-item "Emp_No" | drag-start 96 12
     }
-    with [get-tab-folder] {
-        get-tab-item Schema | click
-        get-tab-item General | click
+    with [get-table -index 1] {
+        drag-enter 11 54 -detail move
+        drag-over 68 58 -detail move
+        drag-exit
+        drag-accept 68 58 -detail move
     }
-    get-group Configuration | get-button Edit -after [get-label KeyFields] | click
-    get-window "Key Field" | get-button OK | click
-    get-group Configuration | get-button Edit -after [get-label SecondaryKeys] | click
+    get-table | drag-set-data
+    with [get-table -index 1] {
+        drop 68 58 -detail move
+        select "Emp_No" | activate-cell-edit
+    }
+    get-table | drag-end -detail move
+    get-table -index 1 | apply-cell-edit -deactivate
+    get-button OK | click
+}
+with [get-window "Aggregate_01 - Properties"] {
+    get-group Configuration | get-button Edit -after [get-label "Secondary Keys"] | click
     with [get-window "Secondary Keys"] {
         with [get-table] {
-            select Name
-            get-item Name | drag-start 82 7
+            select Loc
+            get-item Loc | drag-start 33 7
         }
-        with [get-table -after [get-label "Secondary Keys"]] {
-            drag-enter 17 56 -detail move
-            drag-over 142 47 -detail move
+        with [get-table -index 1] {
+            drag-enter 31 87 -detail move
+            drag-over 141 87 -detail move
             drag-exit
-            drag-accept 142 47 -detail move
+            drag-accept 141 87 -detail move
         }
         get-table | drag-set-data
-        with [get-table -after [get-label "Secondary Keys"]] {
-            drop 142 47 -detail move
-            select Name | activate-cell-edit
+        with [get-table -index 1] {
+            drop 141 87 -detail move
+            select Loc | activate-cell-edit
         }
         get-table | drag-end -detail move
-        get-table -after [get-label "Secondary Keys"] | apply-cell-edit -deactivate
+        get-table -index 1 | apply-cell-edit -deactivate
+        get-button OK | click
+    }
+    get-group Configuration | get-button Edit -after [get-label Aggregate] | click
+    get-window Aggregate | get-button OK | click
+    get-group Configuration | get-button Edit -after [get-label "Secondary Keys"] | click
+    with [get-window "Secondary Keys"] {
+        with [get-table -index 1] {
+            get-cell 0 1 | mouse down -count 1
+            activate-cell-edit -column 1
+            get-combo | select Desc
+            apply-cell-edit -deactivate
+        }
         get-button OK | click
     }
     get-button Apply | click
     get-button OK | click
 }
-with [get-view Palette | get-palette] {
-    get-palette-entry "File Fixed Width" | mouse-move 200 1 -height 23 -width 265
-    get-palette-entry "File Delimited" | mouse-move 172 7 -height 23 -width 265
-}
+get-view Palette | get-palette | get-palette-entry "Generate Records" | mouse-move 132 2 -height 23 -width 265
 get-button "Save (M1+S)" | click
 with [get-window "Save As"] {
     get-tree | select "Project_RCPTT_Automation_Script/jobs"
     with [get-editbox -after [get-label "File name:"]] {
-       set-text "Aggregate_Component_Congiuration.job"
+        click-text 1 11
+        key-type "M1+M2+ARROW_LEFT"
+        set-text "Agg_Run_Fuctionality.job"
     }
     get-button OK | click
 }
-with [get-editor "Aggregate_Component_Congiuration.job"] {
-    get-diagram | get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1 
-        | mouse-move 90 0 -height 66 -width 100
+with [get-editor "Agg_Run_Fuctionality.job"] {
+    with [get-diagram] {
+        get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart | mouse-move 30 20 
+            -height 75 -width 100
+        mouse-hover 25 4 -height 465 -width 1081
+    }
     close
 }
 get-view Palette | click
