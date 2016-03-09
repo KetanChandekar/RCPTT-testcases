@@ -6,7 +6,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _rTZkYOXBEeWvrYKV8V0j7g
 Runtime-Version: 2.0.1.201508250612
-Save-Time: 3/9/16 2:37 PM
+Save-Time: 3/9/16 2:59 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -289,7 +289,7 @@ with [get-window "Aggregate_01 - Properties"] {
     get-button Apply | click
     get-button OK | click
 }
-get-view Palette | get-palette | get-palette-entry "Generate Records" | mouse-move 132 2 -height 23 -width 265
+/*get-view Palette | get-palette | get-palette-entry "Generate Records" | mouse-move 132 2 -height 23 -width 265
 get-button "Save (M1+S)" | click
 with [get-window "Save As"] {
     get-tree | select "Project_RCPTT_Automation_Script/jobs"
@@ -306,6 +306,26 @@ with [get-editor "Agg_Run_Fuctionality.job"] {
             -height 75 -width 100
         mouse-hover 25 4 -height 465 -width 1081
     }
+    close
+}
+get-view Palette | click
+*/
+
+get-editor "" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart | mouse-move 72 21 -height 75 -width 100
+get-button "Save (M1+S)" | click
+with [get-window "Save As"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    with [get-editbox -after [get-label "File name:"]] {
+        set-text "Agg_Compone"
+        set-text "Agg_Componen"
+        set-text "Agg_Component"
+    }
+    get-button OK | click
+}
+with [get-editor "Agg_Component.job"] {
+    get-diagram | get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart 
+        | get-edit-part -className PortEditPart | mouse-move 19 7 -height 10 -width 27
     close
 }
 get-view Palette | click
