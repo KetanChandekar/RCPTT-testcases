@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Schema xmlns:ns2="hydrograph/ui/graph/schema">
+    <fields>
+        <field name="eid" type="java.lang.Integer"/>
+        <field name="ename" type="java.lang.String"/>
+        <field name="salary" type="java.lang.Double" scale="2"/>
+        <field name="joining_date" type="java.util.Date" format="dd/MM/yyyy"/>
+        <field name="deptno" type="java.lang.Integer"/>
+    </fields>
+</ns2:Schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Schema xmlns:ns2="hydrograph/ui/graph/schema">
+    <fields>
+        <field name="F1" type="java.lang.Integer" length="4"/>
+        <field name="F2" type="java.lang.String" length="4"/>
+        <field name="F3" type="java.lang.Integer" length="4"/>
+        <field name="F4" type="java.lang.String" length="4"/>
+    </fields>
+</ns2:Schema>

@@ -1,0 +1,12 @@
+Emp_No#Name#Sal#Dept#Loc
+100#AChaney Flowers#35.0925#Arcu Ltd#Utrecht
+101#Simon Cantu#29.5856#Tortor Ltd#Potenza
+102#Salvador Henderson#95.88#Metus Industries#Ijebu Ode
+103#Lane Harris#73.9#Nec PC#Fort Good Hope
+104#Linus Mcguire#33.7500#Et Eros Proin Incorporated#Boechout
+105#Oleg Small#29.3555#Egestas Aliquam Industries#Leeds
+106#Marshall Williams#86.7358#Velit Dui Corporation#GŽrouville
+107#Alexander Huber#28.4568#Risus LLC#Kinross
+133#Uriah Parrish#2.9336#Ipsum Dolor Sit Foundation#Scorrano
+122#Matthew Mayer#75.6726#Congue A Corp.#Montalto Uffugo
+111#Chancellor Barrera#65.3123#Ligula Inc.#Oud-Turnhout

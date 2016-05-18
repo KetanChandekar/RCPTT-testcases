@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Schema xmlns:ns2="hydrograph/ui/graph/schema">
+    <fields>
+        <field name="Emp_No" type="java.lang.Integer"/>
+        <field name="Name" type="java.lang.String"/>
+        <field name="Sal" type="java.lang.Double" scale="2"/>
+        <field name="Dept" type="java.lang.String"/>
+        <field name="Loc" type="java.lang.String"/>
+    </fields>
+</ns2:Schema>
