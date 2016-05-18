@@ -1,0 +1,162 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Simple_06
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _-Wv-kBztEeaXo9lBkst5sQ
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 5/18/16 5:18 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button -index 0 | click -arrow
+get-menu Job | click
+with [get-window "New Job"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    get-editbox -after [get-label "File name:"] | set-text "Simple_06.job"
+    get-button Finish | click
+}
+with [get-view Palette] {
+    with [get-palette] {
+        with [get-palette-entry Input] {
+            mouse-move 106 19 button1 -height 22 -width 265
+            mouse-press 106 19 button1 -height 22 -width 265
+            mouse-release 106 19 button1 524288 -height 22 -width 265
+        }
+        get-palette-entry "File Delimited" | mouse-move 100 21 -height 23 -width 265
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-move 95 5 button1 -height 23 -width 265
+            mouse-press 95 5 button1 -height 23 -width 265
+            mouse-release 95 5 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-press 95 5 button1 -height 23 -width 265
+            mouse-double-click 95 5 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-release 95 5 button1 524288 -height 23 -width 265
+            mouse-move 101 18 -height 23 -width 265
+        }
+        get-palette-entry "File Mixed Scheme" | mouse-move 112 20 -height 23 -width 265
+        get-palette-entry "File Parquet" | mouse-move 116 19 -height 23 -width 265
+        get-palette-entry "Generate Records" | mouse-move 117 21 -height 23 -width 265
+        get-palette-entry "Hive Parquet" | mouse-move 115 19 -height 23 -width 265
+        get-palette-entry "Hive Text File" | mouse-move 87 20 -height 23 -width 265
+        with [get-palette-entry Output] {
+            mouse-move 68 14 button1 -height 22 -width 265
+            mouse-press 68 14 button1 -height 22 -width 265
+            mouse-release 68 14 button1 524288 -height 22 -width 265
+        }
+        get-palette-entry "Hive Text File" -index 1 | mouse-move 64 10 -height 23 -width 265
+        get-palette-entry "Hive Parquet" -index 1 | mouse-move 64 3 -height 23 -width 265
+        get-palette-entry "File Parquet" -index 1 | mouse-move 64 1 -height 23 -width 265
+        get-palette-entry "File Mixed Scheme" -index 1 | mouse-move 70 1 -height 23 -width 265
+        get-palette-entry "File Fixed Width" -index 1 | mouse-move 75 1 -height 23 -width 265
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-move 75 13 button1 -height 23 -width 265
+            mouse-press 75 13 button1 -height 23 -width 265
+            mouse-release 75 13 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited" -index 1] {
+            mouse-press 75 13 button1 -height 23 -width 265
+            mouse-double-click 75 13 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette | get-palette-entry "File Delimited" -index 1] {
+        mouse-release 75 13 button1 524288 -height 23 -width 265
+        mouse-move 257 9 -height 23 -width 265
+    }
+}
+with [get-editor "Simple_06.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 1 | mouse-move 0 43 -height 80 -width 100
+    with [get-edit-part -className ComponentEditPart | get-edit-part -className PortEditPart] {
+        mouse-move 22 3 button1 -height 10 -width 27
+        mouse-press 22 3 button1 -height 10 -width 27
+        mouse-move 23 3 -mask 524288 -height 10 -width 27
+    }
+    with [get-edit-part -className ComponentEditPart -index 1 | get-edit-part -className PortEditPart] {
+        mouse-drag 16 5 button1 524288 -height 10 -width 27
+        mouse-release 16 5 button1 524288 -height 10 -width 27
+    }
+    with [get-edit-part -className ComponentEditPart] {
+        mouse-move 47 46 button1 -height 80 -width 100
+        mouse-press 47 46 button1 -height 80 -width 100
+        mouse-release 47 46 button1 524288 -height 80 -width 100
+        mouse-press 44 43 button1 -height 80 -width 100
+        mouse-double-click 44 43 button1 -height 80 -width 100
+    }
+}
+with [get-window "IFixedWidth_01 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    get-group "Record Structure Details" | get-button "External Schema" | click
+}
+set-dialog-result File "C:\\RCPTT_DATA_FILES\\External_Schema\\Fixed_Width_Emp.xml"
+with [get-window "IFixedWidth_01 - Properties"] {
+    with [get-group "Record Structure Details"] {
+        get-button "..." | click
+        get-button "Import XML" | click
+    }
+    get-window Information | get-button OK | click
+    get-button Apply | click
+    get-group "Record Structure Details" | get-button "Internal Schema" | click
+    get-tab-folder | get-tab-item General | click
+}
+set-dialog-result File "C:\\RCPTT_DATA_FILES\\Input_Files\\Fixed_WD._Normal"
+with [get-window "IFixedWidth_01 - Properties"] {
+    get-group Configuration | get-button "..." | click
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "Simple_06.job" | get-diagram] {
+    mouse-hover 115 118 -height 409 -width 1081
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1] {
+        mouse-move 37 74 -height 80 -width 100
+        mouse-hover 37 74 -height 80 -width 100
+        mouse-move 40 66 -height 80 -width 100
+        mouse-hover 40 66 -height 80 -width 100
+        mouse-move 41 61 -height 80 -width 100
+        mouse-hover 41 61 -height 80 -width 100
+        mouse-move 60 42 button1 -height 80 -width 100
+        mouse-press 60 42 button1 -height 80 -width 100
+        mouse-release 60 42 button1 524288 -height 80 -width 100
+        mouse-press 60 42 button1 -height 80 -width 100
+        mouse-double-click 60 42 button1 -height 80 -width 100
+    }
+}
+with [get-window "OFDelimited_01 - Properties"] {
+    get-group Configuration | get-editbox -after [get-label "File Path"] | set-text "Output/Simple_06"
+    get-tab-folder | get-tab-item Schema | click
+}
+set-dialog-result MessageBox 64
+with [get-window "OFDelimited_01 - Properties"] {
+    get-group "Record Structure Details" | get-button "Pull Schema" | click
+    get-tab-folder | get-tab-item General | click
+    get-button Apply | click
+    get-group Configuration | get-combo -after [get-label "Safe Property"] | select True
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "Simple_06.job" | get-diagram] {
+    mouse-hover 264 216 -height 409 -width 1081
+    get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart | mouse-move 2 78 
+        -height 80 -width 100
+}
+get-button "Save (M1+S)" | click
+get-button "Run Job (M1+R)" | click
+get-window "Run Configuration Settings" | get-button OK | click
+get-window "Parameter File Dialog" | get-button OK | click
+with [get-editor "Simple_06.job"] {
+    get-diagram | get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1 
+        | mouse-move 46 28 -height 80 -width 100
+    close
+}
+get-view Palette | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

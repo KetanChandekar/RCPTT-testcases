@@ -1,0 +1,155 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Simple_01
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _UJIVgBzdEeaXo9lBkst5sQ
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 5/18/16 3:35 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button -index 0 | click -arrow
+get-menu Job | click
+with [get-window "New Job"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    with [get-editbox -after [get-label "File name:"]] {
+        set-text "Simple_01_.job"
+        set-text "Simple_01.job"
+        set-text "Simple_01_.job"
+        set-text "Simple_01_D.job"
+        set-text "Simple_01_Du.job"
+        set-text "Simple_01.job"
+    }
+    get-button Finish | click
+}
+with [get-view Palette] {
+    with [get-palette] {
+        with [get-palette-entry Input] {
+            mouse-move 107 12 button1 -height 22 -width 265
+            mouse-press 107 12 button1 -height 22 -width 265
+            mouse-release 107 12 button1 524288 -height 22 -width 265
+        }
+        get-palette-entry "File Delimited" | mouse-move 112 21 -height 23 -width 265
+        get-palette-entry "File Fixed Width" | mouse-move 98 21 -height 23 -width 265
+        get-palette-entry "File Mixed Scheme" | mouse-move 87 19 -height 23 -width 265
+        get-palette-entry "File Parquet" | mouse-move 83 13 -height 23 -width 265
+        get-palette-entry "Generate Records" | mouse-move 77 18 -height 23 -width 265
+        get-palette-entry "Hive Parquet" | mouse-move 71 13 -height 23 -width 265
+        with [get-palette-entry "File Delimited"] {
+            mouse-move 70 10 -height 23 -width 265
+            mouse-hover 70 10 -height 23 -width 265
+            mouse-move 70 10 button1 -height 23 -width 265
+            mouse-press 70 10 button1 -height 23 -width 265
+            mouse-release 70 10 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Delimited"] {
+            mouse-press 70 10 button1 -height 23 -width 265
+            mouse-double-click 70 10 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Delimited"] {
+            mouse-release 70 10 button1 524288 -height 23 -width 265
+            mouse-move 70 14 -height 23 -width 265
+        }
+        get-palette-entry "File Fixed Width" | mouse-move 76 14 -height 23 -width 265
+        get-palette-entry "File Mixed Scheme" | mouse-move 81 7 -height 23 -width 265
+        get-palette-entry "File Parquet" | mouse-move 87 7 -height 23 -width 265
+        get-palette-entry "Generate Records" | mouse-move 95 12 -height 23 -width 265
+        get-palette-entry "Hive Parquet" | mouse-move 101 11 -height 23 -width 265
+        with [get-palette-entry Input] {
+            mouse-move 86 283 button1 -height 284 -width 265
+            mouse-press 86 283 button1 -height 284 -width 265
+            mouse-release 86 283 button1 524288 -height 284 -width 265
+        }
+        with [get-palette-entry Output] {
+            mouse-move 84 10 button1 -height 22 -width 265
+            mouse-press 84 10 button1 -height 22 -width 265
+            mouse-release 84 10 button1 524288 -height 22 -width 265
+        }
+        get-palette-entry "Hive Text File" -index 1 | mouse-move 79 10 -height 23 -width 265
+        get-palette-entry "Hive Parquet" -index 1 | mouse-move 84 0 -height 23 -width 265
+        get-palette-entry "File Parquet" -index 1 | mouse-move 87 2 -height 23 -width 265
+        get-palette-entry "File Mixed Scheme" -index 1 | mouse-move 87 2 -height 23 -width 265
+        get-palette-entry "File Fixed Width" -index 1 | mouse-move 82 0 -height 23 -width 265
+        get-palette-entry "File Delimited" -index 1 | mouse-move 79 1 -height 23 -width 265
+        with [get-palette-entry Discard] {
+            mouse-move 73 9 button1 -height 23 -width 265
+            mouse-press 73 9 button1 -height 23 -width 265
+            mouse-release 73 9 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry Discard] {
+            mouse-press 73 9 button1 -height 23 -width 265
+            mouse-double-click 73 9 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette | get-palette-entry Discard] {
+        mouse-release 73 9 button1 524288 -height 23 -width 265
+        mouse-move 256 10 -height 23 -width 265
+    }
+}
+with [get-editor "Simple_01.job" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart | get-edit-part 
+        -className PortEditPart] {
+        mouse-move 23 3 button1 -height 10 -width 27
+        mouse-press 23 3 button1 -height 10 -width 27
+        mouse-move 24 3 -mask 524288 -height 10 -width 27
+    }
+    mouse-drag 106 56 -mask 524288 -height 408 -width 1081
+    with [get-edit-part -className ContainerEditPart] {
+        with [get-edit-part -className ComponentEditPart -index 1 | get-edit-part -className PortEditPart] {
+            mouse-drag 11 4 button1 524288 -height 10 -width 27
+            mouse-release 11 4 button1 524288 -height 10 -width 27
+        }
+        with [get-edit-part -className ComponentEditPart] {
+            mouse-move 55 47 button1 -height 80 -width 100
+            mouse-press 55 47 button1 -height 80 -width 100
+            mouse-release 55 47 button1 524288 -height 80 -width 100
+            mouse-press 52 44 button1 -height 80 -width 100
+            mouse-double-click 52 44 button1 -height 80 -width 100
+        }
+    }
+}
+with [get-window "IFDelimited_01 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    get-group "Record Structure Details" | get-button "External Schema" | click
+}
+set-dialog-result File "C:\\RCPTT_DATA_FILES\\External_Schema\\Emp.xml"
+with [get-window "IFDelimited_01 - Properties"] {
+    with [get-group "Record Structure Details"] {
+        get-button "..." | click
+        get-button "Import XML" | click
+    }
+    get-window Information | get-button OK | click
+    get-group "Record Structure Details" | get-button "Internal Schema" | click
+    get-tab-folder | get-tab-item General | click
+}
+set-dialog-result File "C:\\RCPTT_DATA_FILES\\Input_Files\\Emp - Copy.txt"
+with [get-window "IFDelimited_01 - Properties"] {
+    with [get-group Configuration] {
+        get-button "..." | click
+        get-combo -after [get-label "Has Header"] | select True
+        get-editbox -after [get-label Delimiter] | set-text "#"
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+get-editor "Simple_01.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart | mouse-move 0 16 -height 80 -width 100
+get-button "Save (M1+S)" | click
+get-editor "Simple_01.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart | mouse-move 99 78 -height 80 -width 100
+get-editor "Simple_01.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart | mouse-move 0 31 -height 80 -width 100
+get-button "Run Job (M1+R)" | click
+get-window "Run Configuration Settings" | get-button OK | click
+get-window "Parameter File Dialog" | get-button OK | click
+get-menu "Window/Console" | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

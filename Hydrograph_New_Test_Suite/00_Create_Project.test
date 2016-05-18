@@ -1,0 +1,23 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: 00_Create_Project
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _W3am8Bv8EeazZf1LiQew9A
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 5/17/16 12:25 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | get-menu "New/ELT Project" | click
+with [get-window "New ELT Project"] {
+    with [get-editbox -after [get-label "Project name:"]] {
+        set-text "Project_RCPTT_Automation_Script"
+    }
+    get-button Finish | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

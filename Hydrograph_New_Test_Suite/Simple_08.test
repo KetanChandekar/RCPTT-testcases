@@ -1,0 +1,182 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Simple_08
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _MgJFsBzvEeaXo9lBkst5sQ
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 5/18/16 5:25 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button -index 0 | click -arrow
+get-menu Job | click
+with [get-window "New Job"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    get-editbox -after [get-label "File name:"] | set-text "Simple_08.job"
+    get-button Finish | click
+}
+with [get-view Palette] {
+    with [get-palette] {
+        with [get-palette-entry Input] {
+            mouse-move 37 7 button1 -height 22 -width 265
+            mouse-press 37 7 button1 -height 22 -width 265
+            mouse-release 37 7 button1 524288 -height 22 -width 265
+        }
+        get-palette-entry "File Delimited" | mouse-move 48 22 -height 23 -width 265
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-move 49 4 button1 -height 23 -width 265
+            mouse-press 49 4 button1 -height 23 -width 265
+            mouse-release 49 4 button1 524288 -height 23 -width 265
+        }
+        double-click
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-press 49 4 button1 -height 23 -width 265
+            mouse-double-click 49 4 button1 -height 23 -width 265
+        }
+    }
+    with [get-palette] {
+        with [get-palette-entry "File Fixed Width"] {
+            mouse-release 49 4 button1 524288 -height 23 -width 265
+            mouse-move 54 22 -height 23 -width 265
+        }
+        get-palette-entry "File Mixed Scheme" | mouse-move 61 16 -height 23 -width 265
+        get-palette-entry "File Parquet" | mouse-move 70 16 -height 23 -width 265
+        get-palette-entry "Generate Records" | mouse-move 79 21 -height 23 -width 265
+        get-palette-entry "Hive Parquet" | mouse-move 86 18 -height 23 -width 265
+        get-palette-entry "Generate Records" | mouse-move 262 8 -height 23 -width 265
+    }
+}
+with [get-editor "Simple_08.job" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart] {
+        mouse-move 40 62 button1 -height 80 -width 100
+        mouse-press 40 62 button1 -height 80 -width 100
+        mouse-move 41 62 -mask 524288 -height 80 -width 100
+    }
+    mouse-drag 96 124 button1 524288 -height 314 -width 1081
+    mouse-release 96 124 button1 524288 -height 314 -width 1081
+    get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart | mouse-move 25 79 
+        -height 80 -width 100
+}
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Output] {
+        mouse-move 126 11 button1 -height 22 -width 265
+        mouse-press 126 11 button1 -height 22 -width 265
+        mouse-release 126 11 button1 524288 -height 22 -width 265
+    }
+    get-palette-entry "Hive Text File" -index 1 | mouse-move 124 7 -height 23 -width 265
+    get-palette-entry "Hive Parquet" -index 1 | mouse-move 124 18 -height 23 -width 265
+    get-palette-entry "File Parquet" -index 1 | mouse-move 124 4 -height 23 -width 265
+    with [get-palette-entry "File Mixed Scheme" -index 1] {
+        mouse-move 114 0 -height 23 -width 265
+        mouse-move 91 17 button1 -height 23 -width 265
+        mouse-press 91 17 button1 -height 23 -width 265
+        get-figure 0 | drag-start 91 17
+    }
+}
+with [get-editor "Simple_08.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 218 141 -detail move
+    drag-over 360 74 -detail copy
+    drag-exit
+    drag-accept 360 74 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "Simple_08.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 360 74 -detail copy
+get-view Palette | get-palette | drag-end -detail move
+with [get-editor "Simple_08.job" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart | get-edit-part 
+        -className PortEditPart] {
+        mouse-move 20 2 button1 -height 10 -width 27
+        mouse-press 20 2 button1 -height 10 -width 27
+        mouse-move 21 2 -mask 524288 -height 10 -width 27
+    }
+    mouse-drag 153 111 -mask 524288 -height 311 -width 1078
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1 
+        | get-edit-part -className PortEditPart] {
+        mouse-drag 13 2 button1 524288 -height 10 -width 27
+        mouse-release 13 2 button1 524288 -height 10 -width 27
+    }
+    mouse-move 290 221 button1 -height 311 -width 1078
+    mouse-press 290 221 button1 -height 311 -width 1078
+    mouse-release 290 221 button1 524288 -height 311 -width 1078
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart] {
+        mouse-move 68 45 button1 -height 80 -width 100
+        mouse-press 68 45 button1 -height 80 -width 100
+        mouse-release 68 45 button1 524288 -height 80 -width 100
+        mouse-press 68 45 button1 -height 80 -width 100
+        mouse-double-click 68 45 button1 -height 80 -width 100
+    }
+}
+with [get-window "IFixedWidth_01 - Properties"] {
+    get-tab-folder | get-tab-item Schema | click
+    get-group "Record Structure Details" | get-button "External Schema" | click
+}
+set-dialog-result File "C:\\RCPTT_DATA_FILES\\External_Schema\\Fixed_Width_Emp.xml"
+with [get-window "IFixedWidth_01 - Properties"] {
+    with [get-group "Record Structure Details"] {
+        get-button "..." | click
+        get-button "Import XML" | click
+    }
+    get-window Information | get-button OK | click
+    get-group "Record Structure Details" | get-button "Internal Schema" | click
+    get-tab-folder | get-tab-item General | click
+}
+set-dialog-result File "C:\\RCPTT_DATA_FILES\\Input_Files\\Fixed_WD._Normal"
+with [get-window "IFixedWidth_01 - Properties"] {
+    get-group Configuration | get-button "..." | click
+    get-button Apply | click
+    get-button OK | click
+}
+with [get-editor "Simple_08.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1] {
+    mouse-move 46 55 button1 -height 96 -width 100
+    mouse-press 46 55 button1 -height 96 -width 100
+    mouse-release 46 55 button1 524288 -height 96 -width 100
+    mouse-press 46 55 button1 -height 96 -width 100
+    mouse-double-click 46 55 button1 -height 96 -width 100
+}
+with [get-window "OFMixedScheme_01 - Properties"] {
+    with [get-group Configuration] {
+        get-editbox -after [get-label "File Path"] | set-text "Output/Simple_08"
+        get-combo -after [get-label "Safe Property"] | select True
+    }
+    get-button Apply | click
+    get-tab-folder | get-tab-item Schema | click
+}
+set-dialog-result MessageBox 64
+with [get-window "OFMixedScheme_01 - Properties"] {
+    with [get-group "Record Structure Details"] {
+        get-button "Pull Schema" | click
+        with [get-table] {
+            get-cell 0 8 | mouse down -count 1
+            activate-cell-edit -column 8
+            get-editbox | set-text "!"
+            get-cell 1 8 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select F2 | activate-cell-edit -column 8
+            get-editbox | set-text "@"
+            get-cell 2 8 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select F3 | activate-cell-edit -column 8
+            get-editbox | set-text "#"
+            get-cell 3 8 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select F4 | activate-cell-edit -column 8
+            get-editbox | set-text "$"
+            apply-cell-edit -deactivate
+        }
+    }
+    get-button Apply | click
+    get-button OK | click
+}
+get-button "Save (M1+S)" | click
+get-button "Run Job (M1+R)" | click
+get-window "Run Configuration Settings" | get-button OK | click
+get-window "Parameter File Dialog" | get-button OK | click
+get-editor "Simple_08.job" | close
+get-view Palette | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

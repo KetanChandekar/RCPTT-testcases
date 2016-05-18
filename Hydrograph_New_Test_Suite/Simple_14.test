@@ -1,0 +1,172 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Simple_14
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _k6Oi4BzXEeaXo9lBkst5sQ
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 5/18/16 2:34 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button -index 0 | click
+with [get-window "New Job"] {
+    get-tree | select "Project_RCPTT_Automation_Script/jobs"
+    get-editbox -after [get-label "File name:"] | set-text "Simple_14.job"
+    get-button Finish | click
+}
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Input] {
+        mouse-move 72 8 button1 -height 22 -width 248
+        mouse-press 72 8 button1 -height 22 -width 248
+        mouse-release 72 8 button1 524288 -height 22 -width 248
+    }
+    get-palette-entry "File Delimited" | mouse-move 93 3 -height 23 -width 248
+    get-palette-entry "File Fixed Width" | mouse-move 70 21 -height 23 -width 248
+    get-palette-entry "File Mixed Scheme" | mouse-move 63 20 -height 23 -width 248
+    get-palette-entry "File Parquet" | mouse-move 55 12 -height 23 -width 248
+    with [get-palette-entry "Generate Records"] {
+        mouse-move 53 13 button1 -height 23 -width 248
+        mouse-press 53 13 button1 -height 23 -width 248
+        get-figure 0 | drag-start 53 13
+    }
+}
+with [get-editor "Simple_14.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 2 164 -detail move
+    drag-over 218 125 -detail copy
+    drag-exit
+    drag-accept 218 125 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "Simple_14.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 218 125 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail move
+    with [get-palette-entry Output] {
+        mouse-move 83 11 button1 -height 22 -width 248
+        mouse-press 83 11 button1 -height 22 -width 248
+        mouse-release 83 11 button1 524288 -height 22 -width 248
+    }
+    get-palette-entry "File Mixed Scheme" -index 1 | mouse-move 230 13 -height 23 -width 248
+    with [get-palette-entry "File Delimited" -index 1] {
+        mouse-move 129 18 -height 23 -width 248
+        mouse-move 120 16 -height 23 -width 248
+        mouse-hover 120 16 -height 23 -width 248
+        mouse-move 120 16 button1 -height 23 -width 248
+        mouse-press 120 16 button1 -height 23 -width 248
+        get-figure 0 | drag-start 120 16
+    }
+}
+with [get-editor "Simple_14.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 167 246 -detail move
+    drag-over 447 153 -detail copy
+    drag-exit
+    drag-accept 447 153 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "Simple_14.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 447 153 -detail copy
+get-view Palette | get-palette | drag-end -detail move
+with [get-editor "Simple_14.job" | get-diagram] {
+    mouse-move 318 172 button1 -height 413 -width 1009
+    mouse-press 318 172 button1 -height 413 -width 1009
+    mouse-move 320 172 -mask 524288 -height 413 -width 1009
+    with [get-edit-part -className ContainerEditPart] {
+        mouse-drag 384 188 button1 524288 -height 413 -width 1009
+        mouse-release 384 188 button1 524288 -height 413 -width 1009
+        with [get-edit-part -className ComponentEditPart | get-edit-part -className PortEditPart] {
+            mouse-move 25 3 button1 -height 10 -width 27
+            mouse-press 25 3 button1 -height 10 -width 27
+            mouse-move 26 2 -mask 524288 -height 10 -width 27
+        }
+    }
+    mouse-drag 323 177 -mask 524288 -height 413 -width 1009
+    with [get-edit-part -className ContainerEditPart] {
+        with [get-edit-part -className ComponentEditPart -index 1] {
+            mouse-drag 29 49 button1 524288 -height 80 -width 100
+            mouse-release 29 49 button1 524288 -height 80 -width 100
+        }
+        with [get-edit-part -className ComponentEditPart] {
+            mouse-move 35 51 button1 -height 80 -width 100
+            mouse-press 35 51 button1 -height 80 -width 100
+            mouse-release 35 51 button1 524288 -height 80 -width 100
+            mouse-press 35 51 button1 -height 80 -width 100
+            mouse-double-click 35 51 button1 -height 80 -width 100
+        }
+    }
+}
+
+with [get-window "GRecords_01 - Properties"] {
+    get-group Configuration | get-editbox -after [get-label "No of Records"] | set-text 50
+  /*  get-button Apply | click*/
+    get-tab-folder | get-tab-item Schema | click
+    with [get-group "Record Structure Details"] {
+        get-label "" -after [get-label "Schema Types"] | click
+        get-table | select DefaultField0 | activate-cell-edit
+        get-label "" -after [get-label "Schema Types"] | click
+        with [get-table] {
+            apply-cell-edit -deactivate
+            select DefaultField1 | activate-cell-edit
+            get-cell 1 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select DefaultField1 | activate-cell-edit -column 1
+            get-combo | select integer
+        }
+        get-label "" -after [get-label "Schema Types"] | click
+        with [get-table] {
+            apply-cell-edit -deactivate
+            select DefaultField2 | activate-cell-edit
+            get-cell 2 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select DefaultField2 | activate-cell-edit -column 1
+            get-combo | select double
+        }
+        get-label "" -after [get-label "Schema Types"] | click
+        with [get-table] {
+            apply-cell-edit -deactivate
+            select DefaultField3 | activate-cell-edit
+            get-cell 3 1 | mouse down -count 1
+            apply-cell-edit -deactivate
+            select DefaultField3 | activate-cell-edit -column 1
+            get-combo | select boolean
+            apply-cell-edit -deactivate
+        }
+    }
+/*    get-button Apply | click*/
+    get-button OK | click
+}
+with [get-editor "Simple_14.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1] {
+    mouse-move 49 49 button1 -height 80 -width 100
+    mouse-press 49 49 button1 -height 80 -width 100
+    mouse-release 49 49 button1 524288 -height 80 -width 100
+    mouse-press 49 49 button1 -height 80 -width 100
+    mouse-double-click 49 49 button1 -height 80 -width 100
+}
+with [get-window "OFDelimited_01 - Properties"] {
+    with [get-group Configuration] {
+        get-editbox -after [get-label "File Path"] | set-text "output/Simple_14"
+        get-editbox -after [get-label Delimiter] | set-text "#"
+        get-combo -after [get-label "Has Header"] | select True
+    }
+    get-tab-folder | get-tab-item Schema | click
+}
+set-dialog-result MessageBox 64
+with [get-window "OFDelimited_01 - Properties"] {
+    get-group "Record Structure Details" | get-button "Pull Schema" | click
+    get-button Apply | click
+    get-button OK | click
+}
+get-button "Save (M1+S)" | click
+with [get-view Palette | get-palette | get-palette-entry "Generate Records"] {
+    mouse-move 110 1 -height 23 -width 248
+    mouse-move 194 2 -height 23 -width 248
+}
+get-button "Run Job (M1+R)" | click
+get-window "Run Configuration Settings" | get-button OK | click
+get-window "Parameter File Dialog" | get-button OK | click
+get-editor "Simple_14.job" | close
+get-view Palette | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
